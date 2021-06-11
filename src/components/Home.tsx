@@ -12,6 +12,7 @@ const PageWrapper = styled.div`
     margin: auto;
     padding: 2rem 1rem;
     min-width: ${CssConstants.appContentMinWidth};
+    box-sizing: border-box;
 `;
 
 const Img = styled.img`

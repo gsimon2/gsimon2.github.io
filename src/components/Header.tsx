@@ -7,20 +7,20 @@ import { Description, Home } from '@material-ui/icons';
 import styled from 'styled-components';
 import CssConstants from '../constants/CssConstants';
 
-const HeaderEl = styled.header`
+const HeaderEl = styled.header<{isDarkTheme: boolean}>`
     height: ${CssConstants.headerHeight};
 
     >div {
-        background-color: #181d27;
+        background-color: ${props => props.isDarkTheme ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
     }
 `;
 
 const HeaderBorder = styled.div`
     height: ${CssConstants.headerBorderWidth};
-    background-color: #3f51b5 ;
+    background-color: ${CssConstants.themes.shared.accentColor};
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<IHeaderProps> = ({isDarkTheme}) => {
     const location = useLocation();
     const [selectedTab, setSelectedTab] = useState<string>(location.pathname.replace('/', ''));
 
@@ -30,7 +30,7 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <HeaderEl className="App-header">
+            <HeaderEl className="App-header" isDarkTheme={isDarkTheme} >
                 <BottomNavigation value={selectedTab} showLabels >
                     <BottomNavigationAction component={Link} label="Home" value="" icon={<Home />} to={Routes.home} />
                     <BottomNavigationAction component={Link} label="Resume" value="resume" icon={<Description />} to={Routes.resume} />
@@ -40,5 +40,9 @@ const Header: React.FC = () => {
         </>
     );
 };
+
+interface IHeaderProps {
+    isDarkTheme: boolean;
+}
 
 export default Header;

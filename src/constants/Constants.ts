@@ -1,4 +1,10 @@
 /* eslint-disable */
+
+export enum ThemeTypes {
+    light = 'lgiht',
+    dark = 'dark'
+};
+
 export enum Routes {
     home = "/",
     resume = "/resume"

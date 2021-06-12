@@ -11,7 +11,6 @@ const PageWrapper = styled.div`
     max-width: ${CssConstants.appContentMaxWidth};
     margin: auto;
     padding: 2rem 1rem;
-    min-width: ${CssConstants.appContentMinWidth};
     box-sizing: border-box;
 `;
 
@@ -22,6 +21,7 @@ const Img = styled.img`
 `;
 
 const MobileImg = styled(Img)`
+    min-width: 0;
     max-width: 22rem;
     max-height: 100%;
 `;
@@ -41,8 +41,8 @@ const GridContainerRows = styled.div`
     grid-template-rows: minmax(5rem, 1fr) 1fr;
 `;
 
-const TextContainer = styled.span`
-    margin: 4rem 1rem 0 4rem;
+const TextContainer = styled.span<{isDesktopView: boolean}>`
+    margin: ${props => props.isDesktopView ? '4rem 1rem 0 4rem' : '2rem auto'};
     word-break: break-word;
 `;
 
@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             <PageWrapper>
                 <GridElement>
                     <ImageElemnt src={profileImag} />
-                    <TextContainer>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
+                    <TextContainer isDesktopView={isDesktopView}>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
                 </GridElement>
             </PageWrapper>
         </>

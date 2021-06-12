@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Routes } from '../constants/Constants';
-import { Description, Home } from '@material-ui/icons';
+import { Description, Home, Collections } from '@material-ui/icons';
 import styled from 'styled-components';
 import CssConstants from '../constants/CssConstants';
 
@@ -33,6 +33,7 @@ const Header: React.FC<IHeaderProps> = ({isDarkTheme}) => {
             <HeaderEl className="App-header" isDarkTheme={isDarkTheme} >
                 <BottomNavigation value={selectedTab} showLabels >
                     <BottomNavigationAction component={Link} label="Home" value="" icon={<Home />} to={Routes.home} />
+                    <BottomNavigationAction component={Link} label="Projects" value="projects" icon={<Collections />} to={Routes.projects} />
                     <BottomNavigationAction component={Link} label="Resume" value="resume" icon={<Description />} to={Routes.resume} />
                 </BottomNavigation>
             </HeaderEl>

@@ -7,7 +7,8 @@ export enum ThemeTypes {
 
 export enum Routes {
     home = "/",
-    resume = "/resume"
+    resume = "/resume",
+    projects = "/projects"
 };
 
 export default {

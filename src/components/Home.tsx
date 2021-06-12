@@ -2,17 +2,7 @@ import { useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import profileImag from '../assets/glen-mt.jpg';
-import CssConstants from '../constants/CssConstants';
-import AlertBanner from './AlertBanner';
-
-const PageWrapper = styled.div`
-    width: 100%;
-    height: ${`calc(100vh - ${CssConstants.totalHeaderHeight})`};
-    max-width: ${CssConstants.appContentMaxWidth};
-    margin: auto;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-`;
+import {PageWrapper} from '../util/sharedElements';
 
 const Img = styled.img`
     border-radius: 20%;
@@ -53,7 +43,6 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <AlertBanner />
             <PageWrapper>
                 <GridElement>
                     <ImageElemnt src={profileImag} />

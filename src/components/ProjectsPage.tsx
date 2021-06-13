@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { PageWrapper } from '../util/sharedElements';
 import ProjectCard from './ProjectCard';
+import {projects} from '../siteInfo/projects';
 
 const GridContainer = styled.div<{numColumns: number}>`
     display: grid;
@@ -10,7 +11,6 @@ const GridContainer = styled.div<{numColumns: number}>`
 `;
 
 const ProjectsPage: React.FC = () => {
-    const projects = [1,2,3,4,5,6,7,8,9,10];
     const isSingleColumnView = useMediaQuery('(max-width:500px)');
     const isDoubleColumnView = useMediaQuery('(max-width:750px)');
     const isTripleColumnView = useMediaQuery('(max-width:1000px)');
@@ -34,7 +34,7 @@ const ProjectsPage: React.FC = () => {
     return (
         <PageWrapper>
             <GridContainer numColumns={getNumberOfColumns()}>
-                {projects.map((p, index) => <ProjectCard key={`card${index}`}/>)}
+                {projects.map((p, index) => <ProjectCard {...p} key={`card${index}`}/>)}
             </GridContainer>
         </PageWrapper>
     );

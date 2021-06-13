@@ -1,13 +1,20 @@
-import { Card, CardContent, Grow, Modal, Theme, useTheme } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Grow, makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../constants/Constants';
 import CssConstants from '../constants/CssConstants';
+import { IProject } from '../models/projectModel';
 
 const Wrapper = styled.div`
     padding: 1rem;
     box-sizing: border-box;
 `;
+
+const useStyles = makeStyles({
+    media: {
+      height: 140,
+    },
+  });
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     position: absolute;
@@ -24,26 +31,32 @@ const ModalWrapper = styled.div<{theme: Theme}>`
     border-radius: 1rem;
 `;
 
-const ProjectCard: React.FC = () => {
+const ProjectCard: React.FC<IProject> = ({name, img, description}) => {
     const [displayModal, setDisplayModal] = useState(false);
     const theme = useTheme<Theme>();
+    const classes = useStyles();
 
     return (
         <>
             <Grow in={true}>
                 <Wrapper>
                     <Card variant="outlined" onClick={() => setDisplayModal(true)}>
+                        {img && <CardMedia 
+                            className={classes.media}
+                            image={img}
+                            title={name}
+                        />}
                         <CardContent>
-                            Sample Project
+                            {name}
                         </CardContent>
                     </Card>
                 </Wrapper>
             </Grow>
             <Modal open={displayModal} onClose={() => setDisplayModal(false)}>
                 <ModalWrapper theme={theme}>
-                    <h2 id="project-details-modal-title">Sample Project Details</h2>
+                    <h2 id="project-details-modal-title">{`${name} Details`}</h2>
                     <p id="project-details-modal-description">
-                        More details about projects will be listed here
+                        {description}
                     </p>
                 </ModalWrapper>
             </Modal>

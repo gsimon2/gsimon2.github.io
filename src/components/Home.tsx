@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@material-ui/core';
+import { Grow, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import profileImag from '../assets/glen-mt.jpg';
@@ -38,16 +38,20 @@ const TextContainer = styled.span<{isDesktopView: boolean}>`
 
 const Home: React.FC = () => {
     const isDesktopView = useMediaQuery('(min-width:650px)');
-    const GridElement = isDesktopView ? GridContainerColumns : GridContainerRows;
+    const GridContainer = isDesktopView ? GridContainerColumns : GridContainerRows;
     const ImageElemnt = isDesktopView ? DesktopImg : MobileImg ;
 
     return (
         <>
             <PageWrapper>
-                <GridElement>
-                    <ImageElemnt src={profileImag} />
-                    <TextContainer isDesktopView={isDesktopView}>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
-                </GridElement>
+                <GridContainer>
+                    <Grow in={true}>
+                        <ImageElemnt src={profileImag} />
+                    </Grow>
+                    <Grow in={true}>
+                        <TextContainer isDesktopView={isDesktopView}>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
+                    </Grow>
+                </GridContainer>
             </PageWrapper>
         </>
     );

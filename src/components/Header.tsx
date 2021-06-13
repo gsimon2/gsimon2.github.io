@@ -22,19 +22,19 @@ const HeaderBorder = styled.div`
 
 const Header: React.FC<IHeaderProps> = ({isDarkTheme}) => {
     const location = useLocation();
-    const [selectedTab, setSelectedTab] = useState<string>(location.pathname.replace('/', ''));
+    const [selectedTab, setSelectedTab] = useState<string>(location.pathname);
 
     React.useEffect(() => {
-        setSelectedTab(location.pathname.replace('/', ''))
-    }, [location.pathname])
+        setSelectedTab(location.pathname);
+    }, [location.pathname]);
 
     return (
         <>
             <HeaderEl className="App-header" isDarkTheme={isDarkTheme} >
                 <BottomNavigation value={selectedTab} showLabels >
-                    <BottomNavigationAction component={Link} label="Home" value="" icon={<Home />} to={Routes.home} />
-                    <BottomNavigationAction component={Link} label="Projects" value="projects" icon={<Collections />} to={Routes.projects} />
-                    <BottomNavigationAction component={Link} label="Resume" value="resume" icon={<Description />} to={Routes.resume} />
+                    <BottomNavigationAction component={Link} label="Home" value={Routes.home} icon={<Home />} to={Routes.home} />
+                    <BottomNavigationAction component={Link} label="Projects" value={Routes.projects} icon={<Collections />} to={Routes.projects} />
+                    <BottomNavigationAction component={Link} label="Resume" value={Routes.resume} icon={<Description />} to={Routes.resume} />
                 </BottomNavigation>
             </HeaderEl>
             <HeaderBorder />

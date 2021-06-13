@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header';
 import AppContentRouter from './components/AppContentRouter';
@@ -40,14 +40,14 @@ function App() {
   
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <HashRouter>
         <PageWrapper isDarkTheme={prefersDarkMode}>
           <AppContentWrapper>
             <Header isDarkTheme={prefersDarkMode} />
             <AppContentRouter />
           </AppContentWrapper>
         </PageWrapper>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }

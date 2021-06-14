@@ -5,7 +5,7 @@ export const projects: IProject[] = [
     {
         name: 'Dramatic Rolls',
         img: "https://github.com/gsimon2/dramatic-rolls/blob/main/natty20.gif?raw=true",
-        description: "Fill out description here",
+        description: "Sample Long description. Sample Long description. Sample Long description. Sample Long description. Sample Long description. ",
         tags: [ProjectTags.github, ProjectTags.foundry]
     },
     {

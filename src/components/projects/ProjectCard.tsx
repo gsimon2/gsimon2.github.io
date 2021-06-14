@@ -1,15 +1,23 @@
-import { Card, CardContent, CardMedia, Grow, makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Grow, makeStyles } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ThemeTypes } from '../../constants/Constants';
-import CssConstants from '../../constants/CssConstants';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
+import ProjectModal from './ProjectModal';
 
 const Wrapper = styled.div`
     padding: 1rem;
     box-sizing: border-box;
     cursor: pointer;
+`;
+
+const DescriptionWrapper = styled.p`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: small;
 `;
 
 const useStyles = makeStyles({
@@ -18,26 +26,9 @@ const useStyles = makeStyles({
     },
   });
 
-
-
-const ModalWrapper = styled.div<{theme: Theme}>`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400;
-    background-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
-    color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
-    border: 2px solid;
-    border-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
-    box-shadow: ${props => props.theme.shadows[5]};
-    padding: ${props => props.theme.spacing(2, 4, 3)};
-    border-radius: 1rem;
-`;
-
-const ProjectCard: React.FC<IProject> = ({name, img, description, tags}) => {
+const ProjectCard: React.FC<IProject> = (props) => {
+    const {name, img, description, tags} = props;
     const [displayModal, setDisplayModal] = useState(false);
-    const theme = useTheme<Theme>();
     const classes = useStyles();
 
     return (
@@ -54,19 +45,15 @@ const ProjectCard: React.FC<IProject> = ({name, img, description, tags}) => {
                             <span>
                                 {name}
                             </span>
+                            <DescriptionWrapper>
+                                {description}
+                            </DescriptionWrapper>
                             {tags?.length && <ProjectTagsDisplay tags={tags} />}
                         </CardContent>
                     </Card>
                 </Wrapper>
             </Grow>
-            <Modal open={displayModal} onClose={() => setDisplayModal(false)}>
-                <ModalWrapper theme={theme}>
-                    <h2 id="project-details-modal-title">{`${name} Details`}</h2>
-                    <p id="project-details-modal-description">
-                        {description}
-                    </p>
-                </ModalWrapper>
-            </Modal>
+            <ProjectModal project={props} isOpen={displayModal} onClose={() => setDisplayModal(false)} />
         </>
     );
 };

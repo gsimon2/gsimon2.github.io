@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import { Routes } from '../constants/Constants';
 import Home from './Home';
 import Resume from './Resume';
-import ProjectsPage from './ProjectsPage';
+import ProjectsPage from './projects/ProjectsPage';
 import AlertBanner from './AlertBanner';
 
 const AppContentRouter: React.FC = () => {

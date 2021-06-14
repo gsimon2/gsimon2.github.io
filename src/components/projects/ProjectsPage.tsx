@@ -1,9 +1,9 @@
 import { useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
-import { PageWrapper } from '../util/sharedElements';
+import { PageWrapper } from '../../util/sharedElements';
 import ProjectCard from './ProjectCard';
-import {projects} from '../siteInfo/projects';
+import {projects} from '../../siteInfo/projects';
 
 const GridContainer = styled.div<{numColumns: number}>`
     display: grid;

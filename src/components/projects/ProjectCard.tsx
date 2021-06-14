@@ -1,20 +1,24 @@
 import { Card, CardContent, CardMedia, Grow, makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ThemeTypes } from '../constants/Constants';
-import CssConstants from '../constants/CssConstants';
-import { IProject } from '../models/projectModel';
+import { ThemeTypes } from '../../constants/Constants';
+import CssConstants from '../../constants/CssConstants';
+import { IProject } from '../../models/projectModel';
+import ProjectTagsDisplay from './ProjectTagsDisplay';
 
 const Wrapper = styled.div`
     padding: 1rem;
     box-sizing: border-box;
+    cursor: pointer;
 `;
 
 const useStyles = makeStyles({
     media: {
-      height: 140,
+      height: 140
     },
   });
+
+
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     position: absolute;
@@ -31,7 +35,7 @@ const ModalWrapper = styled.div<{theme: Theme}>`
     border-radius: 1rem;
 `;
 
-const ProjectCard: React.FC<IProject> = ({name, img, description}) => {
+const ProjectCard: React.FC<IProject> = ({name, img, description, tags}) => {
     const [displayModal, setDisplayModal] = useState(false);
     const theme = useTheme<Theme>();
     const classes = useStyles();
@@ -47,7 +51,10 @@ const ProjectCard: React.FC<IProject> = ({name, img, description}) => {
                             title={name}
                         />}
                         <CardContent>
-                            {name}
+                            <span>
+                                {name}
+                            </span>
+                            {tags?.length && <ProjectTagsDisplay tags={tags} />}
                         </CardContent>
                     </Card>
                 </Wrapper>

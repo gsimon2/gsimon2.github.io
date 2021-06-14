@@ -48,7 +48,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
                             <DescriptionWrapper>
                                 {description}
                             </DescriptionWrapper>
-                            {tags?.length && <ProjectTagsDisplay tags={tags} />}
+                            {tags?.length && <ProjectTagsDisplay tags={tags} isCompactView={true} />}
                         </CardContent>
                     </Card>
                 </Wrapper>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
 import { IProject } from '../../models/projectModel';
 import CssConstants from '../../constants/CssConstants';
+import ProjectTagsDisplay from './ProjectTagsDisplay';
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     position: absolute;
@@ -46,6 +47,7 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
                 <p id="project-details-modal-description">
                     {project.description}
                 </p>
+                {project.tags && <ProjectTagsDisplay tags={project.tags} />}
             </ModalWrapper>
         </Modal>
     );

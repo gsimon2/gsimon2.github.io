@@ -1,5 +1,5 @@
 import { Modal, Theme, useTheme } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
 import { IProject } from '../../models/projectModel';
@@ -30,6 +30,7 @@ const ImgWrapper = styled.div`
     display: flex;
     width: 100%;
     justify-content: center;
+    cursor: zoom-in;
 `;
 
 const Img = styled.img`
@@ -37,20 +38,49 @@ const Img = styled.img`
     max-height: 30rem;
 `;
 
+const FullScreenImgWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    cursor: zoom-out;
+`;
+
+const FullScreenImg = styled.img`
+    width: auto;
+    height: auto;
+    max-width: 100vw;
+    object-fit: contain;
+`;
+
 const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) => {
     const theme = useTheme<Theme>();
+    const [showFullScreenImg, setShowFullScreenImg] = useState(false);
 
     return (
-        <Modal open={isOpen} onClose={onClose}>
-            <ModalWrapper theme={theme}>
-                <Header id="project-details-modal-title">{project.name}</Header>
-                {project.img && <ImgWrapper><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
-                <p id="project-details-modal-description">
-                    {project.description}
-                </p>
-                {project.tags && <ProjectTagsDisplay tags={project.tags} />}
-            </ModalWrapper>
-        </Modal>
+        <>
+            <Modal open={isOpen} onClose={onClose}>
+                <ModalWrapper theme={theme}>
+                    <Header id="project-details-modal-title">{project.name}</Header>
+                    {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
+                    <p id="project-details-modal-description">
+                        {project.description}
+                    </p>
+                    {project.tags && <ProjectTagsDisplay tags={project.tags} />}
+                </ModalWrapper>
+            </Modal>
+            <Modal open={showFullScreenImg} onClose={() => setShowFullScreenImg(false)}>
+                <FullScreenImgWrapper onClick={() => setShowFullScreenImg(false) }>
+                    <FullScreenImg src={project.img} alt={`${project.name}-fullscreen`}  />
+                </FullScreenImgWrapper>
+            </Modal>
+        </>
     );
 };
 

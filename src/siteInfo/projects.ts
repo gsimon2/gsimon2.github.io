@@ -5,7 +5,7 @@ export const projects: IProject[] = [
     {
         name: 'Dramatic Rolls',
         img: "https://github.com/gsimon2/dramatic-rolls/blob/main/natty20.gif?raw=true",
-        description: "Sample Long description. Sample Long description. Sample Long description. Sample Long description. Sample Long description. ",
+        description: "A module for FoundryVtt that addes a little excitement to natural 20s and natural 1s.",
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/dramatic-rolls"
@@ -17,7 +17,7 @@ export const projects: IProject[] = [
     {
         name: 'Playlist Drag and Drop',
         img: "https://github.com/gsimon2/playlist-drag-and-drop/blob/main/playlist-drag-and-drop-demo.gif?raw=true",
-        description: "Fill out description here",
+        description: "A module for FoundryVtt that allows dragging playlist soundtracks from the sidebar and dropping them onto the map as ambient sounds. Default sound volume, radius, easing, and repeat settings can be configured via the configure settings menu.",
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/playlist-drag-and-drop"
@@ -29,7 +29,7 @@ export const projects: IProject[] = [
     {
         name: 'Pf2e Inspire Courage',
         img: "https://github.com/gsimon2/pf2e-inspire-courage/blob/main/demo.gif?raw=true",
-        description: "Fill out description here",
+        description: "A module for FoundryVtt that adds a button to character token HUDs that allows for the toggling of Inspire Courage. This utilizes the PF2e \"Inspire Courage\" spell effect. Only applies to to actual character actors, not NPCs due to how spell effect interact with their sheet. When inspire courage is active, the inspire courage effect icon will appear on the token and the spell effect will be added to the actor's sheet. The bonus to attack and damage rolls will automatically apply.",
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/pf2e-inspire-courage"
@@ -40,7 +40,7 @@ export const projects: IProject[] = [
     },
     {
         name: 'Hide Player UI',
-        description: "Fill out description here",
+        description: "A module for FoundryVtt that the GM can enable to hide all joining player's control UI. The intended use for this is when the player screen is being used for displaying the maps during in-person gaming.",
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/hide-player-ui"
@@ -52,7 +52,7 @@ export const projects: IProject[] = [
     {
         name: 'Close Player Art',
         img: "https://github.com/gsimon2/close-player-art/blob/main/close-art.gif?raw=true",
-        description: "Fill out description here",
+        description: "A module for FoundryVtt that adds a configurable hot key (Default ` - backtick) for the GM to close open image popouts on player screens",
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/close-player-art"

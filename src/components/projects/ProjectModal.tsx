@@ -1,4 +1,4 @@
-import { Modal, Theme, useTheme } from '@material-ui/core';
+import { makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
@@ -7,10 +7,7 @@ import CssConstants from '../../constants/CssConstants';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
 
 const ModalWrapper = styled.div<{theme: Theme}>`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
     min-width: 0;
     width: 70vw;
     background-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
@@ -59,13 +56,26 @@ const FullScreenImg = styled.img`
     object-fit: contain;
 `;
 
+const useStyles = makeStyles({
+    modal: {
+        display: 'flex',
+        overflow: 'auto',
+        padding: '1rem'
+    },
+  });
+
 const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) => {
     const theme = useTheme<Theme>();
+    const classes = useStyles();
     const [showFullScreenImg, setShowFullScreenImg] = useState(false);
 
+    const onModalRender = () => {
+        document.getElementById('project-details-modal-description')?.focus();
+    };
+  
     return (
         <>
-            <Modal open={isOpen} onClose={onClose}>
+            <Modal open={isOpen} onClose={onClose} className={classes.modal} onRendered={onModalRender}>
                 <ModalWrapper theme={theme}>
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}

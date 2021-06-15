@@ -24,9 +24,9 @@ const ProjectTagsDisplay: React.FC<IProjectTagsDisplayProps> = ({tags, isCompact
     const tagsElements = tags.map(t => {
         switch (t.type) {
             case ProjectTags.github:
-                return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link || ''} isCompactView={isCompactView} />;
+                return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link || ''} isCompactView={isCompactView} key="github-tag" />;
             case ProjectTags.foundry:
-                return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link || ''} isCompactView={isCompactView} />;
+                return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link || ''} isCompactView={isCompactView} key="foundry-tag" />;
             default:
                 return null;
         }

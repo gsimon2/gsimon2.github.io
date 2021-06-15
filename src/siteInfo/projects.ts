@@ -66,6 +66,33 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/close-player-art"
         }]
     },
+        {
+        name: 'Evo-Ros: Integration Evolution and the Robot Operating System',
+        img: "https://github.com/gsimon2/EvoRos-Paper/blob/main/Figures/Workflow.png?raw=true",
+        description: `
+        A paper that I was lead author on during graduate school. It was published in the "Proceedings of the Genetic and Evolutionary Computation Conference Companion", pp.1386-1393, Kyoto, Japan in July 2018. 
+
+        Abstract
+        In this paper, we describe the Evo-ROS framework, which is intended to help bridge the gap between the evolutionary and traditional robotics communities.
+        Evo-ROS combines an evolutionary algorithm with individual physics-based evaluations conducted using the Robot Operating System (ROS) and the Gazebo simulation environment.
+        Our goals in developing Evo-ROS are to (1) provide researchers in evolutionary robotics with access to the extensive support for real-world components and capabilities developed by the ROS community and (2) 
+        enable ROS developers, and more broadly robotics researchers, to take advantage of evolutionary search during design and testing.
+        We describe the details of the Evo-ROS structure and operation, followed by
+        presentation of a case study using Evo-ROS to optimize placement of sonar sensors on
+        unmanned ground vehicles that can experience reduced sensing capability due
+        to component failures and physical damage.
+        The case study provides insights into the current capabilities and identifies areas 
+        for future enhancements.  
+        `,
+        year: '2018',
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/EvoRos-Paper"
+        }, {
+            type: ProjectTags.paper,
+            link: "https://gsimon2.github.io/EvoRos-Paper/"
+        }]
+    },
     {
         name: 'Custom Fitbit Watchface',
         img: "https://github.com/gsimon2/fitbit-watchface/blob/main/demo.gif?raw=true",

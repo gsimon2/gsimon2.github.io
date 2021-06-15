@@ -60,5 +60,14 @@ export const projects: IProject[] = [
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/close-player-art"
         }]
+    },
+    {
+        name: 'Custom Fitbit Watchface',
+        img: "https://github.com/gsimon2/fitbit-watchface/blob/main/demo.gif?raw=true",
+        description: "A fun custom Fitbit watch face I designed for my fiancé while we were dating. It has a simple watch face with a background image of our dog, Loki. If you click the sides of the screen in a pre-defined sequence, then a custom message would appear on the screen.",
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/fitbit-watchface"
+        }]
     }
 ]

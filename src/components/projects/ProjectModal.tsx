@@ -34,6 +34,7 @@ const ImgWrapper = styled.div`
 
 const Img = styled.img`
     max-width: min(60vw, ${CssConstants.appContentMaxWidth});
+    max-height: 30rem;
 `;
 
 const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) => {

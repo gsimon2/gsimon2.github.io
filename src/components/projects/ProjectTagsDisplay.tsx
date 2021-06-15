@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { ProjectTags } from "../../constants/Constants";
 import CasinoIcon from '@material-ui/icons/Casino';
+import { IProjectTag } from '../../models/projectModel';
+import TagDisplay from './TagDisplay';
 
 const TypeTagsWrapperCompact = styled.div`
     display: flex;
@@ -16,28 +18,29 @@ const TypeTyagsWrapperExpanded = styled.div`
     align-items: flex-end;
 `;
 
-const IconWrapper = styled.div`
-    padding: 0.25rem;
-    display: flex;
-
-    >span {
-        margin-left: 0.5rem;
-    }
-`;
-
 const ProjectTagsDisplay: React.FC<IProjectTagsDisplayProps> = ({tags, isCompactView = false}) => {
     const Wrapper = isCompactView ? TypeTagsWrapperCompact : TypeTyagsWrapperExpanded;
 
+    const tagsElements = tags.map(t => {
+        switch (t.type) {
+            case ProjectTags.github:
+                return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link || ''} isCompactView={isCompactView} />;
+            case ProjectTags.foundry:
+                return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link || ''} isCompactView={isCompactView} />;
+            default:
+                return null;
+        }
+    });
+
     return (
         <Wrapper>
-            {tags.includes(ProjectTags.github) && <IconWrapper title="Has Github Repo"><GitHubIcon />{!isCompactView && <span>Has Github Repo</span>}</IconWrapper>}
-            {tags.includes(ProjectTags.foundry) && <IconWrapper title="Foundry Module"><CasinoIcon />{!isCompactView && <span>Foundry Module</span>}</IconWrapper>}
+            {tagsElements}
       </Wrapper>
     );
 };
 
 export interface IProjectTagsDisplayProps {
-    tags: ProjectTags[];
+    tags: IProjectTag[];
     isCompactView?: boolean;
 }
 

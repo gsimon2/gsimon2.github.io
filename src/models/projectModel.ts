@@ -4,5 +4,10 @@ export interface IProject {
     name: string;
     img?: string;
     description: string;
-    tags?: ProjectTags[];
+    tags?: IProjectTag[];
 };
+
+export interface IProjectTag {
+    type: ProjectTags;
+    link?: string;
+}

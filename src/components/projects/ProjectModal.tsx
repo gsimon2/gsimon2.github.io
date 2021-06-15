@@ -56,6 +56,10 @@ const FullScreenImg = styled.img`
     object-fit: contain;
 `;
 
+const P = styled.p`
+    white-space: pre-line;
+`;
+
 const useStyles = makeStyles({
     modal: {
         display: 'flex',
@@ -80,9 +84,9 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
                     <span>{project.year}</span>
-                    <p id="project-details-modal-description">
+                    <P id="project-details-modal-description">
                         {project.description}
-                    </p>
+                    </P>
                     {project.tags && <ProjectTagsDisplay tags={project.tags} />}
                 </ModalWrapper>
             </Modal>

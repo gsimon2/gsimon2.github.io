@@ -26,8 +26,17 @@ const useStyles = makeStyles({
     },
   });
 
+  const CardTopWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+  `;
+
+  const YearSpan = styled.span`
+    font-size: small;
+  `;
+
 const ProjectCard: React.FC<IProject> = (props) => {
-    const {name, img, description, tags} = props;
+    const {name, img, description, year, tags} = props;
     const [displayModal, setDisplayModal] = useState(false);
     const classes = useStyles();
 
@@ -42,9 +51,14 @@ const ProjectCard: React.FC<IProject> = (props) => {
                             title={name}
                         />}
                         <CardContent>
-                            <span>
-                                {name}
-                            </span>
+                            <CardTopWrapper>
+                                <span>
+                                    {name}
+                                </span>
+                                <YearSpan>
+                                    {year}
+                                </YearSpan>
+                            </CardTopWrapper>
                             <DescriptionWrapper>
                                 {description}
                             </DescriptionWrapper>

@@ -69,6 +69,7 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
                 <ModalWrapper theme={theme}>
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
+                    <span>{project.year}</span>
                     <p id="project-details-modal-description">
                         {project.description}
                     </p>

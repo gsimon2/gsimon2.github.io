@@ -4,6 +4,7 @@ export interface IProject {
     name: string;
     img?: string;
     description: string;
+    year: string;
     tags?: IProjectTag[];
 };
 

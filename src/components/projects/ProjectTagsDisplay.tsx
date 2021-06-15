@@ -5,6 +5,7 @@ import { ProjectTags } from "../../constants/Constants";
 import CasinoIcon from '@material-ui/icons/Casino';
 import { IProjectTag } from '../../models/projectModel';
 import TagDisplay from './TagDisplay';
+import SchoolIcon from '@material-ui/icons/School';
 
 const TypeTagsWrapperCompact = styled.div`
     display: flex;
@@ -24,9 +25,11 @@ const ProjectTagsDisplay: React.FC<IProjectTagsDisplayProps> = ({tags, isCompact
     const tagsElements = tags.map(t => {
         switch (t.type) {
             case ProjectTags.github:
-                return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link || ''} isCompactView={isCompactView} key="github-tag" />;
+                return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link} isCompactView={isCompactView} key="github-tag" />;
             case ProjectTags.foundry:
-                return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link || ''} isCompactView={isCompactView} key="foundry-tag" />;
+                return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link} isCompactView={isCompactView} key="foundry-tag" />;
+            case ProjectTags.school:
+                return <TagDisplay text="School Project" icon={<SchoolIcon />} isCompactView={isCompactView} key="school-tag" />;
             default:
                 return null;
         }

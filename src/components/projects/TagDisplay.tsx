@@ -9,14 +9,20 @@ const IconWrapper = styled.div`
         margin-left: 0.5rem;
         color: #3f51b5 !important;
     }
+
+    span {
+        margin-left: 0.5rem;
+    }
 `;
 
 const TagDisplay: React.FC<ITagDisplayProps> = ({text, icon, link, isCompactView}) => {
+    const title = link ? isCompactView ? text: link : text;
+    const expandedElement = link ? <a href={link} target="_blank" rel="noreferrer">{text}</a> : <span>{text}</span>;
 
     return (
-        <IconWrapper title={isCompactView ? text: link}>
+        <IconWrapper title={title}>
             {icon}
-            {!isCompactView && <a href={link} target="_blank" rel="noreferrer">{text}</a>}
+            {!isCompactView && expandedElement}
         </IconWrapper>
     );
 };
@@ -24,7 +30,7 @@ const TagDisplay: React.FC<ITagDisplayProps> = ({text, icon, link, isCompactView
 export interface ITagDisplayProps {
     text: string;
     icon: any;
-    link: string;
+    link?: string;
     isCompactView: boolean;
 }
 

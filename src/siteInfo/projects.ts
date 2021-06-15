@@ -84,6 +84,8 @@ export const projects: IProject[] = [
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/bomber-dodger"
+        }, {
+            type: ProjectTags.school
         }]
     }
 ]

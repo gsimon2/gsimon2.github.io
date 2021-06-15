@@ -69,5 +69,14 @@ export const projects: IProject[] = [
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/fitbit-watchface"
         }]
+    },
+    {
+        name: 'Bomber Dodger',
+        img: "https://github.com/gsimon2/bomber-dodger/blob/main/demo.gif?raw=true",
+        description: "A surprisingly entertaining game that I submitted as a project for my CSE 471 Media Processing and Multimedia course at Michigan State University. Written in C#.",
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/bomber-dodger"
+        }]
     }
 ]

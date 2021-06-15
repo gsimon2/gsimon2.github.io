@@ -7,6 +7,7 @@ import { IProjectTag } from '../../models/projectModel';
 import TagDisplay from './TagDisplay';
 import SchoolIcon from '@material-ui/icons/School';
 import DescriptionIcon from '@material-ui/icons/Description';
+import CodeIcon from '@material-ui/icons/Code';
 
 const TypeTagsWrapperCompact = styled.div`
     display: flex;
@@ -33,6 +34,8 @@ const ProjectTagsDisplay: React.FC<IProjectTagsDisplayProps> = ({tags, isCompact
                 return <TagDisplay text="School Project" icon={<SchoolIcon />} isCompactView={isCompactView} key="school-tag" />;
             case ProjectTags.paper:
                 return <TagDisplay text="Paper" icon={<DescriptionIcon />} link={t.link} isCompactView={isCompactView} key="paper-tag" />
+            case ProjectTags.code:
+                return <TagDisplay text="Coding Project" icon={<CodeIcon />} isCompactView={isCompactView} key="code-tag" />
             default:
                 return null;
         }

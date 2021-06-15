@@ -13,6 +13,8 @@ export const projects: IProject[] = [
         }, {
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/dramatic-rolls"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -26,6 +28,8 @@ export const projects: IProject[] = [
         }, {
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/playlist-drag-and-drop"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -39,6 +43,8 @@ export const projects: IProject[] = [
         }, {
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/pf2e-inspire-courage"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -51,6 +57,8 @@ export const projects: IProject[] = [
         }, {
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/hide-player-ui"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -64,6 +72,8 @@ export const projects: IProject[] = [
         }, {
             type: ProjectTags.foundry,
             link: "https://foundryvtt.com/packages/close-player-art"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -116,6 +126,8 @@ export const projects: IProject[] = [
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/fitbit-watchface"
+        },{
+            type: ProjectTags.code
         }]
     },
     {
@@ -128,6 +140,8 @@ export const projects: IProject[] = [
             link: "https://github.com/gsimon2/bomber-dodger"
         }, {
             type: ProjectTags.school
+        },{
+            type: ProjectTags.code
         }]
     }
 ]

@@ -16,6 +16,7 @@ export enum ProjectTags {
     foundry,
     school,
     paper,
+    code
 }
 
 export default {

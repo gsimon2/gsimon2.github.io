@@ -66,7 +66,22 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/close-player-art"
         }]
     },
-        {
+    {
+        name: 'Applying Evolution and Novelty Search to Enhance the Resilience of Autonomous Systems',
+        img: "https://github.com/gsimon2/EvoRos-Enki/blob/main/fig_evoros_enki_dfd.jpg?raw=true",
+        description: `
+        A paper I contributed to during graduate school. It was publiched in the "IEEE/ACM 14th International Symposium on Software Engineering for Adaptive and Self-Managing Systems (SEAMS)", Montreal, QC, Canada in May 2019.
+
+        Abstract
+        We investigate the integration of evolutionary algorithms and novelty search in order to improve the performance and resilience of autonomous systems. We have developed two tools for this purpose: Evo-ROS and Enki. Evo-ROS combines evolutionary search with physics-based simulations of autonomous systems whose software infrastructure is based on the Robot Operating System (ROS). Enki uses novelty search to discover operational scenarios that lead to the most diverse behavior in the target system. Combining these tools yields an automated approach to explore the operational landscape of the target system, identify regions of poor performance, and evolve system parameters that better respond to adverse situations. In this paper, we present results of a case study of the throttle controller on AutoRally, a 1:5-scale autonomous vehicle designed by researchers at Georgia Tech for the study of aggressive autonomous driving. Preliminary experiments demonstrate the ability of the proposed methods to identify and characterize input speed signals that cause the existing controller to perform poorly. The ability to identify these troublesome signals enables development of a control system capable of handling a wider range of conditions by autonomously switching among controller modes that are optimized for different conditions.
+        `,
+        year: '2019',
+        tags: [{
+            type: ProjectTags.paper,
+            link: "https://github.com/gsimon2/EvoRos-Enki/blob/main/Enki___Evo_ROS_Integration.pdf"
+        }]
+    },
+    {
         name: 'Evo-Ros: Integration Evolution and the Robot Operating System',
         img: "https://github.com/gsimon2/EvoRos-Paper/blob/main/Figures/Workflow.png?raw=true",
         description: `

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
 import ProjectModal from './ProjectModal';
+import CssConstants from '../../constants/CssConstants';
 
 const Wrapper = styled.div`
     padding: 1rem;
@@ -24,6 +25,9 @@ const useStyles = makeStyles({
     media: {
       height: 140
     },
+    card: {
+        borderColor: CssConstants.themes.shared.accentColor
+    }
   });
 
   const CardTopWrapper = styled.div`
@@ -44,7 +48,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
         <>
             <Grow in={true}>
                 <Wrapper>
-                    <Card variant="outlined" onClick={() => setDisplayModal(true)}>
+                    <Card variant="outlined" onClick={() => setDisplayModal(true)} className={classes.card}>
                         {img && <CardMedia 
                             className={classes.media}
                             image={img}

@@ -14,7 +14,7 @@ const ModalWrapper = styled.div<{theme: Theme}>`
     background-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
     color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
     border: 2px solid;
-    border-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
+    border-color: ${CssConstants.themes.shared.accentColor};
     box-shadow: ${props => props.theme.shadows[5]};
     padding: ${props => props.theme.spacing(2, 4, 3)};
     border-radius: 1rem;

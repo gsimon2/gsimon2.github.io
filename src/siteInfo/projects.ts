@@ -132,6 +132,24 @@ export const projects: IProject[] = [
         }]
     },
     {
+        name: 'Population Mapping via Wi-Fi Network Analysis',
+        img: "https://github.com/gsimon2/population-mapping-via-wifi/blob/main/heat_map_first_floor_110717_6pm.png?raw=true",
+        description: `
+        A paper that I wrote with a couple of classmates, eleborating our work to utilize Michigan State University's Engineering Building Wi-Fi network to accurately map and predict population density of connected users. Submitted as a final project report for CSE 824: Advanced Computer Networking and Communications.
+
+        Abstract
+        In this paper we present an in-depth analysis on the usage of the Wi-Fi network located in the College of Engineering building at Michigan State University, with a focus on mapping the population distribution of the network users. The novelty in our work resides in the fact that we are not relying on GPS information from users' phones to provide localization. Instead, a dense collection of access points with known locations are used to identify the locality of connecting users. Our work provides statistical information about the behavior of congestion in the network, shows how the population distribution can be modeled using heatmaps, and offers a network usage prediction model that can represent how a population typically navigates through the building. We believe that this work is beneficial by allowing better understanding of how the current network is being used by the student population, helps identifying where highly congested locations are in the building, and can be used as a tool when determining the optimal deployment locations for future access points. 
+        `,
+        year: '2017',
+        tags: [{
+            type: ProjectTags.paper,
+            link: "https://github.com/gsimon2/population-mapping-via-wifi/blob/main/Population_Mapping_via_Wi_Fi_Network_Analysis__normalsize_The_Final_Report.pdf"
+        }, {
+            type: ProjectTags.academic
+        }]
+    },
+
+    {
         name: 'Bomber Dodger',
         img: "https://github.com/gsimon2/bomber-dodger/blob/main/demo.gif?raw=true",
         description: "A surprisingly entertaining game that I submitted as a project for my CSE 471 Media Processing and Multimedia course at Michigan State University. Written in C#.",

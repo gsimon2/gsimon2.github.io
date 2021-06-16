@@ -1,10 +1,11 @@
-import { makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
+import { IconButton, makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
 import { IProject } from '../../models/projectModel';
 import CssConstants from '../../constants/CssConstants';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
+import CloseIcon from '@material-ui/icons/Close';
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     margin: auto;
@@ -66,6 +67,12 @@ const useStyles = makeStyles({
         overflow: 'auto',
         padding: '1rem'
     },
+
+    closeButtonWrapper: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        margin: '-1rem'
+    }
   });
 
 const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) => {
@@ -81,6 +88,11 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
         <>
             <Modal open={isOpen} onClose={onClose} className={classes.modal} onRendered={onModalRender}>
                 <ModalWrapper theme={theme}>
+                    <div className={classes.closeButtonWrapper}>
+                        <IconButton color="primary" onClick={onClose} title="close">
+                            <CloseIcon />
+                        </IconButton>
+                    </div>
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
                     <span>{project.year}</span>

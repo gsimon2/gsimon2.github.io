@@ -14,7 +14,7 @@ export enum Routes {
 export enum ProjectTags {
     github,
     foundry,
-    school,
+    academic,
     paper,
     code
 }

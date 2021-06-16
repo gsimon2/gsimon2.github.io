@@ -89,6 +89,8 @@ export const projects: IProject[] = [
         tags: [{
             type: ProjectTags.paper,
             link: "https://github.com/gsimon2/EvoRos-Enki/blob/main/Enki___Evo_ROS_Integration.pdf"
+        }, {
+            type: ProjectTags.academic
         }]
     },
     {
@@ -113,6 +115,8 @@ export const projects: IProject[] = [
         tags: [{
             type: ProjectTags.paper,
             link: "https://gsimon2.github.io/EvoRos-Paper/"
+        }, {
+            type: ProjectTags.academic
         }]
     },
     {
@@ -136,7 +140,7 @@ export const projects: IProject[] = [
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/bomber-dodger"
         }, {
-            type: ProjectTags.school
+            type: ProjectTags.academic
         },{
             type: ProjectTags.code
         }]

@@ -30,8 +30,8 @@ const ProjectTagsDisplay: React.FC<IProjectTagsDisplayProps> = ({tags, isCompact
                 return <TagDisplay text="Github Repo" icon={<GitHubIcon />} link={t.link} isCompactView={isCompactView} key="github-tag" />;
             case ProjectTags.foundry:
                 return <TagDisplay text="Foundry Module" icon={<CasinoIcon />} link={t.link} isCompactView={isCompactView} key="foundry-tag" />;
-            case ProjectTags.school:
-                return <TagDisplay text="School Project" icon={<SchoolIcon />} isCompactView={isCompactView} key="school-tag" />;
+            case ProjectTags.academic:
+                return <TagDisplay text="Academic Project" icon={<SchoolIcon />} isCompactView={isCompactView} key="school-tag" />;
             case ProjectTags.paper:
                 return <TagDisplay text="Paper" icon={<DescriptionIcon />} link={t.link} isCompactView={isCompactView} key="paper-tag" />
             case ProjectTags.code:

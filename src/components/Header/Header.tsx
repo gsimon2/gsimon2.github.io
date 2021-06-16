@@ -1,43 +1,44 @@
-import { BottomNavigation, BottomNavigationAction } from '@material-ui/core';
+import { BottomNavigation, BottomNavigationAction, makeStyles, Theme, useTheme } from '@material-ui/core';
 import * as React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Routes, ThemeTypes } from '../../constants/Constants';
 import { Description, Home, Collections } from '@material-ui/icons';
-import styled from 'styled-components';
 import CssConstants from '../../constants/CssConstants';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../redux/store';
 import SettingsMenu from './SettingsMenu';
 
-const HeaderEl = styled.header<{themeType: ThemeTypes}>`
-    display: flex;
-    height: ${CssConstants.headerHeight};
-    background-color: ${props => props.themeType === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
-
-    >div {
-        background-color: ${props => props.themeType === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
+const useStyles = makeStyles((theme: Theme) => ({
+    header: {
+        display: 'flex',
+        height: CssConstants.headerHeight,
+        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
+        position: 'sticky',
+        top: 0,
+        zIndex: theme.zIndex.appBar
+    },
+    bottomNav: {
+        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground
+    },
+    headerBorder: {
+        minHeight: CssConstants.headerBorderWidth,
+        backgroundColor: CssConstants.themes.shared.accentColor,
+        position: 'sticky',
+        top: CssConstants.headerHeight
+    },
+    leftHeaderElement: {
+        width: '10rem',
+        marginRight: 'auto'
+    },
+    RightHeaderElement: {
+        width: '10rem',
+        marginLeft: 'auto'
     }
-`;
-
-const HeaderBorder = styled.div`
-    height: ${CssConstants.headerBorderWidth};
-    background-color: ${CssConstants.themes.shared.accentColor};
-`;
-
-const LeftHeaderEl = styled.div`
-    width: 10rem;
-    margin-right: auto;
-`;
-
-const RightHeaderEl = styled.div`
-    width: 10rem;
-    margin-left: auto;
-`;
+  }));
 
 const Header: React.FC = () => {
     const location = useLocation();
-    const themeType = useSelector((state: RootState) => state.userPreferences.theme);
+    const theme = useTheme<Theme>();
+    const classes = useStyles(theme);
     const [selectedTab, setSelectedTab] = useState<string>(location.pathname);
 
     React.useEffect(() => {
@@ -46,18 +47,18 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <HeaderEl className="App-header" themeType={themeType} >
-                <LeftHeaderEl/>
-                <BottomNavigation value={selectedTab} showLabels >
+            <header className={classes.header}>
+                <div className={classes.leftHeaderElement} />
+                <BottomNavigation value={selectedTab} showLabels className={classes.bottomNav} >
                     <BottomNavigationAction component={Link} label="Home" value={Routes.home} icon={<Home />} to={Routes.home} />
                     <BottomNavigationAction component={Link} label="Projects" value={Routes.projects} icon={<Collections />} to={Routes.projects} />
                     <BottomNavigationAction component={Link} label="Resume" value={Routes.resume} icon={<Description />} to={Routes.resume} />
                 </BottomNavigation>
-                <RightHeaderEl>
+                <div className={classes.RightHeaderElement}>
                     <SettingsMenu />
-                </RightHeaderEl>
-            </HeaderEl>
-            <HeaderBorder />
+                </div>
+            </header>
+            <div className={classes.headerBorder} /> 
         </>
     );
 };

@@ -111,9 +111,6 @@ export const projects: IProject[] = [
         `,
         year: '2018',
         tags: [{
-            type: ProjectTags.github,
-            link: "https://github.com/gsimon2/EvoRos-Paper"
-        }, {
             type: ProjectTags.paper,
             link: "https://gsimon2.github.io/EvoRos-Paper/"
         }]

@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     card: {
         backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
-        borderColor: CssConstants.themes.shared.accentColor
+        borderColor: CssConstants.themes.shared.accentColor,
+        boxShadow: theme.shadows[2]
     }
   }));
 

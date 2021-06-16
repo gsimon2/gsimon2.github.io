@@ -148,7 +148,6 @@ export const projects: IProject[] = [
             type: ProjectTags.academic
         }]
     },
-
     {
         name: 'Bomber Dodger',
         img: "https://github.com/gsimon2/bomber-dodger/blob/main/demo.gif?raw=true",
@@ -162,5 +161,25 @@ export const projects: IProject[] = [
         },{
             type: ProjectTags.code
         }]
-    }
+    },
+    {
+        name: 'Orthopaedic Exercise Feedback System',
+        img: "https://github.com/gsimon2/ProjectBaymaxWebsite/blob/master/project-overview-diagram.png?raw=true",
+        description: `
+        A paper that I wrote with a small team of classmates, detailing our work in making a cyber-physical rehabilitation station that consisted of an exercise unit equipped with a touch screen computer that coached patients through their therapy routines. This unit also recorded statistics of the session and reported feedback to a SQL database. Asynchronously therapists could access a website to view progress of sessions and update patient regiments via this online portal. Submitted as a final report to Michigan State’s ECE 480 Senior Design course.
+
+        Abstract
+        During shoulder rehabilitation, doctors and therapists cannot guarantee that patients are completing the proper care while on their own. While at home or unattended in a therapeutic establishment, some patients have a tendency to skip routines and cheat the system, which can make therapy all for naught. Also, if the therapist is not assisting during every exercise, the patient can easily be using improper form. By doing so, incorrect muscles and joints are being worked, which can have a negative impact on the result of therapy. In order to solve this issue, Design Team One of MSU’s ECE 480 class has developed a control system to force correct progress and deliver feedback to the doctors and therapists. By integrating multiple hardware components, the new machine has the capability to halt operation if improper form is sensed. Through software applications, the doctors and therapists will be able to assign customized exercises based on each patient’s needs and the patient will have an interactive screen at the machine which shows these assigned custom exercises. After a therapy routine has been completed, a progress report will be sent automatically to the user who assigned the exercises. Thereby, guaranteeing that the routines have been done correctly and completely.
+        `,
+        year: '2016',
+        tags: [{
+            type: ProjectTags.paper,
+            link: "https://github.com/gsimon2/ProjectBaymaxWebsite/blob/master/ECE480%20Project%20Final%20Report%20-%202016-12-04.pdf"
+        }, {
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/ProjectBaymaxWebsite"
+        },{
+            type: ProjectTags.academic
+        }]
+    },
 ]

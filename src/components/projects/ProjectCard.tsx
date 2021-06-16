@@ -1,10 +1,11 @@
-import { Card, CardContent, CardMedia, Grow, makeStyles } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
 import ProjectModal from './ProjectModal';
 import CssConstants from '../../constants/CssConstants';
+import { ThemeTypes } from '../../constants/Constants';
 
 const Wrapper = styled.div`
     padding: 1rem;
@@ -21,14 +22,15 @@ const DescriptionWrapper = styled.p`
     font-size: small;
 `;
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
     media: {
       height: 140
     },
     card: {
+        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
         borderColor: CssConstants.themes.shared.accentColor
     }
-  });
+  }));
 
   const CardTopWrapper = styled.div`
     display: flex;
@@ -42,7 +44,8 @@ const useStyles = makeStyles({
 const ProjectCard: React.FC<IProject> = (props) => {
     const {name, img, description, year, tags} = props;
     const [displayModal, setDisplayModal] = useState(false);
-    const classes = useStyles();
+    const theme = useTheme<Theme>();
+    const classes = useStyles(theme);
 
     return (
         <>

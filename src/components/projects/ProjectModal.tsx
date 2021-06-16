@@ -81,7 +81,7 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
     const [showFullScreenImg, setShowFullScreenImg] = useState(false);
 
     const onModalRender = () => {
-        document.getElementById('project-details-modal-description')?.focus();
+        document.getElementById('close-modal-button')?.focus();
     };
   
     return (
@@ -89,7 +89,7 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
             <Modal open={isOpen} onClose={onClose} className={classes.modal} onRendered={onModalRender}>
                 <ModalWrapper theme={theme}>
                     <div className={classes.closeButtonWrapper}>
-                        <IconButton color="primary" onClick={onClose} title="close">
+                        <IconButton color="primary" onClick={onClose} title="close" id="close-modal-button">
                             <CloseIcon />
                         </IconButton>
                     </div>

@@ -12,11 +12,11 @@ export enum Routes {
 };
 
 export enum ProjectTags {
-    github,
-    foundry,
-    academic,
-    paper,
-    code
+    github = "github",
+    foundry = "foundry",
+    academic = "academic",
+    paper = "paper",
+    code = "code"
 }
 
 export default {

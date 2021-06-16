@@ -11,7 +11,14 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     wrapper: {
         maxWidth: CssConstants.appContentMaxWidth,
-        margin: '1rem auto 0'
+        width: 'fit-content',
+        margin: 'auto'
+    },
+    popoutContainer: {
+        position: 'absolute',
+        zIndex: theme.zIndex.snackbar,
+        width: '100%',
+        marginTop: '2.5rem'
     }
 }));
 
@@ -23,8 +30,10 @@ const AlertBanner: React.FC = () => {
     return (
         <>
         { displayAlert ?
-            <div className={classes.wrapper}>
-                <Alert severity="info" className={classes.alert} onClose={() => setDisplayAlert(false)}>Site is under development - More to come soon! = D</Alert>
+            <div className={classes.popoutContainer}>
+                <div className={classes.wrapper}>
+                    <Alert severity="info" className={classes.alert} onClose={() => setDisplayAlert(false)}>Site is under development - More to come soon! = D</Alert>
+                </div> 
             </div> :
             null
         }

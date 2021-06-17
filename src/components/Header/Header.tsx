@@ -32,11 +32,13 @@ const useStyles = makeStyles((theme: Theme) => ({
         maxWidth: '10rem',
         minWidth: 0,
         flex: '1 1 auto',
-        marginRight: 'auto'
+        marginRight: 'auto',
+        height: CssConstants.headerHeight
     },
     RightHeaderElement: {
         width: '10rem',
-        marginLeft: 'auto'
+        marginLeft: 'auto',
+        height: CssConstants.headerHeight
     }
   }));
 

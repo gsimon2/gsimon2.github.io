@@ -2,6 +2,7 @@ import { Grow, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 import profileImag from '../assets/glen-mt.jpg';
+import CssConstants from '../constants/CssConstants';
 import {PageWrapper} from '../util/sharedElements';
 
 const Img = styled.img`
@@ -31,15 +32,15 @@ const GridContainerRows = styled.div`
     grid-template-rows: minmax(5rem, 1fr) 1fr;
 `;
 
-const TextContainer = styled.span<{isDesktopView: boolean}>`
-    margin: ${props => props.isDesktopView ? '4rem 1rem 0 4rem' : '2rem auto'};
+const TextContainer = styled.span<{isMobileView: boolean}>`
+    margin: ${props => props.isMobileView ? '2rem auto' : '4rem 1rem 0 4rem'};
     word-break: break-word;
 `;
 
 const Home: React.FC = () => {
-    const isDesktopView = useMediaQuery('(min-width:650px)');
-    const GridContainer = isDesktopView ? GridContainerColumns : GridContainerRows;
-    const ImageElemnt = isDesktopView ? DesktopImg : MobileImg ;
+    const isMobileView = useMediaQuery(`(max-width:${CssConstants.mobileBreakPoint})`);
+    const GridContainer = isMobileView ? GridContainerRows : GridContainerColumns;
+    const ImageElemnt = isMobileView ? MobileImg : DesktopImg ;
 
     return (
         <>
@@ -49,7 +50,7 @@ const Home: React.FC = () => {
                         <ImageElemnt src={profileImag} />
                     </Grow>
                     <Grow in={true}>
-                        <TextContainer isDesktopView={isDesktopView}>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
+                        <TextContainer isMobileView={isMobileView}>Hi I'm Glen! Eventually I will talk about myself here</TextContainer>
                     </Grow>
                 </GridContainer>
             </PageWrapper>

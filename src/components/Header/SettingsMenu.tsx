@@ -4,7 +4,8 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ThemeSelector from './ThemeSelector';
-import { useMediaQuery } from '@material-ui/core';
+import { IconButton, useMediaQuery } from '@material-ui/core';
+import CssConstants from '../../constants/CssConstants';
 
 const Wrapper = styled.div`
     display: flex;
@@ -22,7 +23,7 @@ const MenuContainer = styled.div`
 
 const SettingsMenu: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-  const isDesktopView = useMediaQuery('(min-width:650px)');
+  const isMobileView = useMediaQuery(`(max-width:${CssConstants.mobileBreakPoint})`);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -34,12 +35,18 @@ const SettingsMenu: React.FC = () => {
 
   const open = Boolean(anchorEl);
   const id = open ? 'settings-popover' : undefined;
+  const settingsButton = (isMobileView ?
+    <IconButton onClick={handleClick} title="Settings">
+      <SettingsIcon />
+    </IconButton> :
+    <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick} startIcon={<SettingsIcon />} title="Settings">
+        Settings
+    </Button>
+  )
 
   return (
     <Wrapper>
-        <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick} startIcon={<SettingsIcon />} title="Settings">
-            {isDesktopView && "Settings"}
-        </Button>
+        {settingsButton}
         <Popover
         id={id}
         open={open}

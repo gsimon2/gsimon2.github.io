@@ -6,6 +6,7 @@ import { Routes, ThemeTypes } from '../../constants/Constants';
 import { Description, Home, Collections } from '@material-ui/icons';
 import CssConstants from '../../constants/CssConstants';
 import SettingsMenu from './SettingsMenu';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles((theme: Theme) => ({
     header: {
@@ -26,7 +27,10 @@ const useStyles = makeStyles((theme: Theme) => ({
         top: CssConstants.headerHeight
     },
     leftHeaderElement: {
-        width: '10rem',
+        display: 'flex',
+        maxWidth: '10rem',
+        minWidth: 0,
+        flex: '1 1 auto',
         marginRight: 'auto'
     },
     RightHeaderElement: {
@@ -51,6 +55,7 @@ const Header: React.FC = () => {
                 <div className={classes.leftHeaderElement} />
                 <BottomNavigation value={selectedTab} showLabels className={classes.bottomNav} >
                     <BottomNavigationAction component={Link} label="Home" value={Routes.home} icon={<Home />} to={Routes.home} />
+                    <BottomNavigationAction component={Link} label="Github Stats" value={Routes.githubStats} icon={<GitHubIcon />} to={Routes.githubStats} />
                     <BottomNavigationAction component={Link} label="Projects" value={Routes.projects} icon={<Collections />} to={Routes.projects} />
                     <BottomNavigationAction component={Link} label="Resume" value={Routes.resume} icon={<Description />} to={Routes.resume} />
                 </BottomNavigation>

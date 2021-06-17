@@ -9,7 +9,7 @@ export enum Routes {
     home = "/",
     resume = "/resume",
     projects = "/projects",
-    githubStates = '/githubStats'
+    githubStats = '/githubStats'
 };
 
 export enum ProjectTags {
@@ -22,5 +22,6 @@ export enum ProjectTags {
 
 export default {
     resumeIframeSource: "https://docs.google.com/gview?url=https://github.com/gsimon2/Resume/raw/main/Resume.pdf&embedded=true",
+    githubRepoLink: "https://github.com/gsimon2",
     themeKey: "themeType"
 };

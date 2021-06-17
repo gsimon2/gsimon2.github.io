@@ -5,6 +5,7 @@ export default {
     totalHeaderHeight: '3.5625rem',
     appContentMaxWidth: '80rem',
     appContentMinWidth: '450px',
+    linkColor: '#3f51b5 !important',
     themes: {
         shared: {
             accentColor: '#3f51b5'

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import CssConstants from '../../constants/CssConstants';
 
 const IconWrapper = styled.div`
     padding: 0.25rem;
@@ -7,7 +8,7 @@ const IconWrapper = styled.div`
 
     a {
         margin-left: 0.5rem;
-        color: #3f51b5 !important;
+        color: ${CssConstants.linkColor};
     }
 
     span {

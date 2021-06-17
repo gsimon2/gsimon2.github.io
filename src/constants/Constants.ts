@@ -8,7 +8,8 @@ export enum ThemeTypes {
 export enum Routes {
     home = "/",
     resume = "/resume",
-    projects = "/projects"
+    projects = "/projects",
+    githubStates = '/githubStats'
 };
 
 export enum ProjectTags {

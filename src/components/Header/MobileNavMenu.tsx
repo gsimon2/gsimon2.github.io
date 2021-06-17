@@ -12,10 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         boxShadow: `inset 3px 0px 5px 0px ${ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor}`
     },
     listItem: {
-        color: theme.palette.type === ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor,
-        "&:hover": {
-            background: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.primaryBackground : CssConstants.themes.light.secondaryBackground
-        }
+        color: theme.palette.type === ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor
     }
 }));
 

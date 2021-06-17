@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       height: 140
     },
     card: {
+        padding: '1px',
         backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
         borderColor: CssConstants.themes.shared.accentColor,
         boxShadow: theme.shadows[2]

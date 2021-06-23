@@ -8,6 +8,7 @@ import CssConstants from '../../constants/CssConstants';
 import SettingsMenu from './SettingsMenu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MobileNavMenu from './MobileNavMenu';
+import headerImgSource from '../../assets/headerImage.png';
 
 const useStyles = makeStyles((theme: Theme) => ({
     header: {
@@ -27,18 +28,28 @@ const useStyles = makeStyles((theme: Theme) => ({
         position: 'sticky',
         top: CssConstants.headerHeight
     },
-    leftHeaderElement: {
+    headerElement: {
         display: 'flex',
-        maxWidth: '10rem',
-        minWidth: 0,
-        flex: '1 1 auto',
-        marginRight: 'auto',
-        height: CssConstants.headerHeight
+        flex: 1,
+        height: CssConstants.headerHeight,
+        minWidth: 0
     },
-    RightHeaderElement: {
-        width: '10rem',
-        marginLeft: 'auto',
-        height: CssConstants.headerHeight
+    leftHeaderElement: {
+        justifyContent: 'flex-start'
+    },
+    centerHeaderElement: {
+        justifyContent: 'center',
+        flexGrow: 3
+    },
+    rightHeaderElement: {
+        justifyContent: 'flex-end'
+    },
+    titleImg: {
+        objectFit: 'contain',
+        overflow: 'hidden',
+        filter: theme.palette.type === ThemeTypes.dark ? 'none': 'saturate(1000)',
+        maxWidth: '15rem',
+        marginLeft: '1rem'
     }
   }));
 
@@ -62,12 +73,18 @@ const Header: React.FC = () => {
         </BottomNavigation>
     );
 
+    const TitleElement = <img src={headerImgSource} className={classes.titleImg} alt="Glen A Simon"/>
+
     return (
         <>
             <header className={classes.header}>
-                <div className={classes.leftHeaderElement}>{isMobileView && <MobileNavMenu />}</div>
-                {!isMobileView && NavElement}
-                <div className={classes.RightHeaderElement}>
+                <div className={`${classes.headerElement} ${classes.leftHeaderElement}`}>
+                    {isMobileView ? <MobileNavMenu />: TitleElement}
+                </div>
+                <div className={`${classes.headerElement} ${classes.centerHeaderElement}`}>
+                {isMobileView ? TitleElement : NavElement}
+                </div>
+                <div className={`${classes.headerElement} ${classes.rightHeaderElement}`}>
                     <SettingsMenu />
                 </div>
             </header>

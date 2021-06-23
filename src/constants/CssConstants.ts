@@ -5,7 +5,7 @@ export default {
     totalHeaderHeight: '3.5625rem',
     appContentMaxWidth: '80rem',
     appContentMinWidth: '450px',
-    mobileBreakPoint: '600px',
+    mobileBreakPoint: '700px',
     linkColor: '#3f51b5 !important',
     linkColorSecondary: '#8395f9 !important',
     themes: {

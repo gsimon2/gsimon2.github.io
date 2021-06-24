@@ -8,7 +8,8 @@ import CssConstants from '../../constants/CssConstants';
 import SettingsMenu from './SettingsMenu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import MobileNavMenu from './MobileNavMenu';
-import headerImgSource from '../../assets/headerImage.png';
+import {ReactComponent as HeaderLogoLight} from '../../assets/header-logo-light.svg';
+import {ReactComponent as HeaderLogoDark} from '../../assets/header-logo-dark.svg';
 
 const useStyles = makeStyles((theme: Theme) => ({
     header: {
@@ -44,12 +45,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     rightHeaderElement: {
         justifyContent: 'flex-end'
     },
-    titleImg: {
-        objectFit: 'contain',
-        overflow: 'hidden',
-        filter: theme.palette.type === ThemeTypes.dark ? 'none': 'saturate(1000)',
-        maxWidth: '15rem',
-        marginLeft: '1rem'
+    logo: {
+        maxWidth: '235px'
     }
   }));
 
@@ -73,16 +70,16 @@ const Header: React.FC = () => {
         </BottomNavigation>
     );
 
-    const TitleElement = <img src={headerImgSource} className={classes.titleImg} alt="Glen A Simon"/>
+    const HeaderLogo = theme.palette.type === ThemeTypes.dark ? <HeaderLogoDark className={classes.logo} /> : <HeaderLogoLight className={classes.logo} />;
 
     return (
         <>
             <header className={classes.header}>
                 <div className={`${classes.headerElement} ${classes.leftHeaderElement}`}>
-                    {isMobileView ? <MobileNavMenu />: TitleElement}
+                    {isMobileView ? <MobileNavMenu />: HeaderLogo}
                 </div>
                 <div className={`${classes.headerElement} ${classes.centerHeaderElement}`}>
-                {isMobileView ? TitleElement : NavElement}
+                {isMobileView ? HeaderLogo : NavElement}
                 </div>
                 <div className={`${classes.headerElement} ${classes.rightHeaderElement}`}>
                     <SettingsMenu />

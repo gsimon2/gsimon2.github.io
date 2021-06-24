@@ -3,7 +3,6 @@ import React from 'react';
 import CssConstants from '../../constants/CssConstants';
 import {PageWrapper} from '../../util/sharedElements';
 import { ReactSVG } from 'react-svg'
-import { ThemeTypes } from '../../constants/Constants';
 
 const useStyles = makeStyles((theme: Theme) => ({
     gridContainerColumns: {

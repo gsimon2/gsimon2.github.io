@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     card: {
         "& svg > g > rect": {
-        stroke: `${CssConstants.themes.shared.accentColor} !important`,
-        filter: 'drop-shadow(0px 3px 1px rgba(0,0,0,0.2))'
+            stroke: `${CssConstants.themes.shared.accentColor} !important`,
+            filter: 'drop-shadow(0px 3px 1px rgba(0,0,0,0.2))',
+            fill: `${CssConstants.themes.light.secondaryBackground} !important`
         }
     }
 }));

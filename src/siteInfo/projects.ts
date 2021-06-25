@@ -15,7 +15,11 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/dramatic-rolls"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/dramatic-rolls?style=plastic)',
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/dramatic-rolls/latest/module.zip)'
+        ]
     },
     {
         name: 'Playlist Drag and Drop',
@@ -30,7 +34,11 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/playlist-drag-and-drop"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/playlist-drag-and-drop?style=plastic)',
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/playlist-drag-and-drop/latest/module.zip)'
+        ]
     },
     {
         name: 'Pf2e Inspire Courage',
@@ -45,7 +53,12 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/pf2e-inspire-courage"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/pf2e-inspire-courage?style=plastic)',
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/pf2e-inspire-courage/latest/module.zip)'
+
+        ]
     },
     {
         name: 'Hide Player UI',
@@ -59,7 +72,11 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/hide-player-ui"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/hide-player-ui?style=plastic)',
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/hide-player-ui/latest/module.zip)'
+        ]
     },
     {
         name: 'Close Player Art',
@@ -74,7 +91,11 @@ export const projects: IProject[] = [
             link: "https://foundryvtt.com/packages/close-player-art"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/close-player-art?style=plastic)',
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/close-player-art/latest/module.zip)'
+        ]
     },
     {
         name: 'Applying Evolution and Novelty Search to Enhance the Resilience of Autonomous Systems',
@@ -120,7 +141,10 @@ export const projects: IProject[] = [
             link: "https://github.com/gsimon2/fitbit-watchface"
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/fitbit-watchface?style=plastic)'
+        ]
     },
     {
         name: 'Population Mapping via Wi-Fi Network Analysis',
@@ -151,7 +175,10 @@ export const projects: IProject[] = [
             type: ProjectTags.academic
         },{
             type: ProjectTags.code
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/bomber-dodger)'
+        ]
     },
     {
         name: 'Orthopaedic Exercise Feedback System',
@@ -171,6 +198,9 @@ export const projects: IProject[] = [
             link: "https://github.com/gsimon2/ProjectBaymaxWebsite"
         },{
             type: ProjectTags.academic
-        }]
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/ProjectBaymaxWebsite)'
+        ]
     },
 ]

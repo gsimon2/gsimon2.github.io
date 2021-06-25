@@ -6,6 +6,7 @@ import { IProject } from '../../models/projectModel';
 import CssConstants from '../../constants/CssConstants';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
 import CloseIcon from '@material-ui/icons/Close';
+import ReactMarkdown from 'react-markdown';
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     margin: auto;
@@ -67,11 +68,21 @@ const useStyles = makeStyles({
         overflow: 'auto',
         padding: '1rem'
     },
-
     closeButtonWrapper: {
         display: 'flex',
         justifyContent: 'flex-end',
         margin: '-1rem'
+    },
+    metaDataWrapper: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        "& >p": {
+            margin: '0.75rem 0.5rem 0'
+        },
+        "& >span": {
+            margin: '0.375rem 0.5rem 0 0'
+        }
     }
   });
 
@@ -95,7 +106,10 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
                     </div>
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
-                    <span>{project.year}</span>
+                    <div className={classes.metaDataWrapper}>
+                        <span>{project.year}</span>
+                        {project.shields?.map((s, index) => <ReactMarkdown children={s} key={`shield-io-${index}`} />)}
+                    </div>
                     <P id="project-details-modal-description">
                         {project.description}
                     </P>

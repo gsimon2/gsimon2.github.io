@@ -4,14 +4,12 @@ import { Routes } from '../constants/Constants';
 import Home from './Home';
 import Resume from './Resume';
 import ProjectsPage from './projects/ProjectsPage';
-import AlertBanner from './AlertBanner';
 import GithubStatsPage from './githubStats/GithubStatsPage';
 
 const AppContentRouter: React.FC = () => {
 
     return (
         <>
-            <AlertBanner />
             <Route  path={Routes.resume} component={Resume}/>
             <Route path={Routes.projects} component={ProjectsPage} />
             <Route path={Routes.githubStats} component={GithubStatsPage} />

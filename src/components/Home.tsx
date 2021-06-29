@@ -3,6 +3,7 @@ import React from 'react';
 import profileImag from '../assets/glen-mt.jpg';
 import CssConstants from '../constants/CssConstants';
 import {PageWrapper} from '../util/sharedElements';
+import bio from '../siteInfo/bio';
 
 const useStyles = makeStyles((theme: Theme) => ({
     img: {
@@ -31,10 +32,12 @@ const useStyles = makeStyles((theme: Theme) => ({
         gridTemplateColumns: 'minmax(5rem, 1fr) 1fr'
     },
     textContainerMobile: {
+        whiteSpace: 'break-spaces',
         wordBreak: 'break-word',
         margin: '2rem auto'
     },
     textContainerDesktop: {
+        whiteSpace: 'break-spaces',
         wordBreak: 'break-word',
         margin: '4rem 1rem 0 4rem'
     }
@@ -53,7 +56,7 @@ const Home: React.FC = () => {
                         <img src={profileImag} className={`${classes.img} ${isMobileView ? classes.imgMobile : classes.imgDesktop}`} alt="profile" />
                     </Grow>
                     <Grow in={true}>
-                        <span className={isMobileView ? classes.textContainerMobile : classes.textContainerDesktop}>Hi I'm Glen! Eventually I will talk about myself here</span>
+                        <p className={isMobileView ? classes.textContainerMobile : classes.textContainerDesktop}>{bio.aboutMe}</p>
                     </Grow>
                 </div>
             </PageWrapper>

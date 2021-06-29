@@ -1,4 +1,4 @@
-import { IconButton, makeStyles, Modal, Theme, useTheme } from '@material-ui/core';
+import { IconButton, makeStyles, Modal, Theme, useMediaQuery, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
@@ -75,7 +75,6 @@ const useStyles = makeStyles({
     },
     metaDataWrapper: {
         display: 'flex',
-        flexDirection: 'row',
         alignItems: 'center',
         "& >p": {
             margin: '0.75rem 0.5rem 0'
@@ -83,12 +82,19 @@ const useStyles = makeStyles({
         "& >span": {
             margin: '0.375rem 0.5rem 0 0'
         }
+    },
+    flexDirectionRow: {
+        flexDirection: 'row'
+    },
+    flexDirectionColumn: {
+        flexDirection: 'column'
     }
   });
 
 const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) => {
     const theme = useTheme<Theme>();
     const classes = useStyles();
+    const isMobileView = useMediaQuery(`(max-width:${CssConstants.mobileBreakPoint})`);
     const [showFullScreenImg, setShowFullScreenImg] = useState(false);
 
     const onModalRender = () => {
@@ -106,7 +112,7 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
                     </div>
                     <Header id="project-details-modal-title">{project.name}</Header>
                     {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
-                    <div className={classes.metaDataWrapper}>
+                    <div className={`${classes.metaDataWrapper} ${isMobileView ? classes.flexDirectionColumn : classes.flexDirectionRow}`}>
                         <span>{project.year}</span>
                         {project.shields?.map((s, index) => <ReactMarkdown children={s} key={`shield-io-${index}`} />)}
                     </div>

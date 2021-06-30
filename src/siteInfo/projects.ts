@@ -1,7 +1,26 @@
 import { ProjectTags } from "../constants/Constants";
 import { IProject } from "../models/projectModel";
+import personalWebsiteImg from '../assets/personal-website-development.png';
 
 export const projects: IProject[] = [
+    {
+        name: 'Personal Website',
+        img: personalWebsiteImg,
+        description: `I created this website to supplement my resume, encourage further learning when it comes to designing front-end projects, and act as a reference guide for ideas / practices that I have picked up over my years of working in React. I boot-strapped it using 'Create React App' with the typescript template. For routing, I pulled in the 'React Router Dom' hash router. I Explored and leveraged 'Material UI' as a component library, supplemented with 'Styled Components'. Application state is tracked via 'React Redux'. For hosting, I used 'Github Pages' and took advantage of 'Github Actions' to automate the build and deploy process. Lastly, I bought a personal domain so I could share it at a nice URL.
+
+        Overall, it is grossly over-engineered for what its purpose is, but I had a blast making it.
+        `,
+        year: '2021',
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/gsimon2.github.io"
+        },{
+            type: ProjectTags.code
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/gsimon2.github.io?style=plastic)'
+        ]
+    },
     {
         name: 'Dramatic Rolls',
         img: "https://github.com/gsimon2/dramatic-rolls/blob/main/natty20.gif?raw=true",

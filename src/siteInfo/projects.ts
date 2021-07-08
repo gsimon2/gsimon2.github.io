@@ -24,7 +24,7 @@ export const projects: IProject[] = [
     {
         name: 'Dramatic Rolls',
         img: "https://github.com/gsimon2/dramatic-rolls/blob/main/natty20.gif?raw=true",
-        description: "A module for FoundryVtt that addes a little excitement to natural 20s and natural 1s.",
+        description: "A module for FoundryVtt that adds a little excitement to natural 20s and natural 1s.",
         year: '2021',
         tags: [{
             type: ProjectTags.github,

@@ -8,6 +8,7 @@ import CssConstants from './constants/CssConstants';
 import { RootState } from './redux/store';
 import { useSelector } from 'react-redux';
 import { ThemeTypes } from './constants/Constants';
+import AssetPreFetchManager from './util/AssetPreFetchManager';
 
 const PageWrapper = styled.div<{themeType: ThemeTypes}>`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -48,6 +49,7 @@ function App() {
             <AppContentWrapper>
               <Header />
               <AppContentRouter />
+              <AssetPreFetchManager />
             </AppContentWrapper>
           </PageWrapper>
         </HashRouter>

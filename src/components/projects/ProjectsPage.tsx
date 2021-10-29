@@ -16,7 +16,7 @@ const GridContainer = styled.div<{numColumns: number}>`
 
 const useStyles = makeStyles((theme: Theme) => ({
     appBar: {
-        top: CssConstants.totalHeaderHeight
+        top: CssConstants.headerHeight
     },
     toolbar: {
         width: '100%',

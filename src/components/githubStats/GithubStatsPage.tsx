@@ -1,8 +1,8 @@
 import { Grow, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/core';
 import React from 'react';
 import CssConstants from '../../constants/CssConstants';
-import {PageWrapper} from '../../util/sharedElements';
 import { ReactSVG } from 'react-svg'
+import ParticlesBackground from '../ParticlesBackground';
 
 const useStyles = makeStyles((theme: Theme) => ({
     gridContainerColumns: {
@@ -40,7 +40,7 @@ const GithubStatsPage: React.FC = () => {
     const isMobileView = useMediaQuery('(max-width:1000px)');
 
     return (
-        <PageWrapper>
+        <ParticlesBackground>
             <div className={isMobileView ? classes.gridContainerRows : classes.gridContainerColumns}>
                 <Grow in={true} style={{overflow: 'hidden', width: '100%', display: 'flex', justifyContent: 'center'}}>
                     <ReactSVG src="https://raw.githubusercontent.com/gsimon2/github-stats/master/generated/overview.svg" className={classes.card} />
@@ -52,7 +52,7 @@ const GithubStatsPage: React.FC = () => {
             <div>
                 <p className={classes.p}>Github stat elements were generated using: <a className={classes.link} href="https://github.com/jstrieb/github-stats" target="_blank" rel="noreferrer">Github Stats</a></p>
             </div>
-        </PageWrapper>
+        </ParticlesBackground>
     );
 };
 

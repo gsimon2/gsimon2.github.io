@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
+const Label = styled.label`
+    cursor: pointer;
+`;
+
 const ThemeSelector: React.FC = () => {
     const themeType = useSelector((state: RootState) => state.userPreferences.theme);
     const dispatch = useDispatch();
@@ -24,7 +28,7 @@ const ThemeSelector: React.FC = () => {
    
     return (
         <Wrapper>
-            <span>Theme</span>
+            <Label onClick={e => handleThemeChange(e, themeType === ThemeTypes.dark ? ThemeTypes.light : ThemeTypes.dark)}>Theme</Label>
             <ToggleButtonGroup value={themeType} exclusive onChange={handleThemeChange} aria-label="Theme Selection">
                 <ToggleButton value={ThemeTypes.dark} aria-label="Dark Theme" title="Dark Theme">
                     <NightsStayIcon />

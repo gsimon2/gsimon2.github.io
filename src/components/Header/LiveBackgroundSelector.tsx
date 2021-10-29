@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     align-items: center;
 `;
 
+const Label = styled.label`
+    cursor: pointer;
+`;
+
 const LiveBackgroundSelector: React.FC = () => {
     const isEnabled = useSelector((state: RootState) => state.userPreferences.liveBackground);
     const dispatch = useDispatch();
@@ -24,7 +28,7 @@ const LiveBackgroundSelector: React.FC = () => {
    
     return (
         <Wrapper>
-            <span>Live Background</span>
+            <Label onClick={e => handleSettingsChange(e, !isEnabled)}>Live Background</Label>
             <ToggleButtonGroup value={isEnabled} exclusive onChange={handleSettingsChange} aria-label="Live Background Selection">
                 <ToggleButton value={false} aria-label="Disabled" title="Disabled">
                     <CloseIcon />

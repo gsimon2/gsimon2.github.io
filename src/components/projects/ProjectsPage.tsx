@@ -1,13 +1,13 @@
 import { AppBar, Toolbar, useMediaQuery, InputBase, makeStyles, Theme, useTheme, fade, IconButton } from '@material-ui/core';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { PageWrapper } from '../../util/sharedElements';
 import ProjectCard from './ProjectCard';
 import {projects} from '../../siteInfo/projects';
 import SearchIcon from '@material-ui/icons/Search';
 import { IProject } from '../../models/projectModel';
 import CloseIcon from '@material-ui/icons/Close';
 import CssConstants from '../../constants/CssConstants';
+import ParticlesBackground from '../ParticlesBackground';
 
 const GridContainer = styled.div<{numColumns: number}>`
     display: grid;
@@ -16,7 +16,7 @@ const GridContainer = styled.div<{numColumns: number}>`
 
 const useStyles = makeStyles((theme: Theme) => ({
     appBar: {
-        top: CssConstants.totalHeaderHeight
+        top: CssConstants.headerHeight
     },
     toolbar: {
         width: '100%',
@@ -124,11 +124,11 @@ const ProjectsPage: React.FC = () => {
                     </div>
                 </Toolbar>
             </AppBar>
-            <PageWrapper>
+            <ParticlesBackground>
                 <GridContainer numColumns={getNumberOfColumns()}>
                     {projectsToDisplay}
                 </GridContainer>
-            </PageWrapper>
+            </ParticlesBackground>
         </>
     );
 };

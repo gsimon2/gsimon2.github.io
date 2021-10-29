@@ -4,6 +4,8 @@ import CssConstants from '../constants/CssConstants';
 import { useMediaQuery } from '@material-ui/core';
 import styled from 'styled-components';
 import {PageWrapper} from '../util/sharedElements';
+import { RootState } from '../redux/store';
+import { useSelector } from 'react-redux';
 
 const Wrapper = styled.div<{isMobileView: boolean}>`
     .particles-bg-canvas-self {
@@ -15,6 +17,7 @@ const Wrapper = styled.div<{isMobileView: boolean}>`
 `;
 
 const ParticlesBackground: React.FC = ({children}) => {
+    const isEnabled = useSelector((state: RootState) => state.userPreferences.liveBackground);
     const isMobileView = useMediaQuery(`(max-width:${CssConstants.mobileBreakPoint})`);
     const [windowSize, setWindowSize] = useState(window.innerWidth);
 
@@ -32,7 +35,7 @@ const ParticlesBackground: React.FC = ({children}) => {
 
     return (
         <Wrapper isMobileView={isMobileView} >
-            <ParticlesBg type="cobweb" bg={true} color={CssConstants.themes.shared.accentColor} num={windowSize / 10} key={windowSize} />
+            {isEnabled && <ParticlesBg type="cobweb" bg={true} color={CssConstants.themes.shared.accentColor} num={windowSize / 10} key={windowSize} />}
             <PageWrapper>
                 {children}
             </PageWrapper>

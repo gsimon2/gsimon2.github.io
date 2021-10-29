@@ -6,6 +6,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import ThemeSelector from './ThemeSelector';
 import { IconButton, useMediaQuery } from '@material-ui/core';
 import CssConstants from '../../constants/CssConstants';
+import LiveBackgroundSelector from './LiveBackgroundSelector';
 
 const Wrapper = styled.div`
     display: flex;
@@ -63,6 +64,7 @@ const SettingsMenu: React.FC = () => {
         >
             <MenuContainer>
                 <ThemeSelector />
+                <LiveBackgroundSelector />
             </MenuContainer>
         </Popover>
     </Wrapper>

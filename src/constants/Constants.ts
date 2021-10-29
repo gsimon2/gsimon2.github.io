@@ -23,5 +23,6 @@ export enum ProjectTags {
 export default {
     resumeIframeSource: "https://docs.google.com/gview?url=https://github.com/gsimon2/Resume2/raw/main/Resume2.pdf&embedded=true",
     githubRepoLink: "https://github.com/gsimon2",
-    themeKey: "themeType"
+    themeKey: "themeType",
+    enableLiveBackgroundKey: "isLiveBackgroundEnabled"
 };

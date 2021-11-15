@@ -3,7 +3,7 @@ import React from 'react';
 import profileImag from '../assets/glen-mt.jpg';
 import CssConstants from '../constants/CssConstants';
 import bio from '../siteInfo/bio';
-import ParticlesBackground from './ParticlesBackground';
+import ParticlesBackground from '../particles/ParticlesBackground';
 
 import { ThemeTypes } from '../constants/Constants';
 

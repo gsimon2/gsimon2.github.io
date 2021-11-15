@@ -7,7 +7,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { IProject } from '../../models/projectModel';
 import CloseIcon from '@material-ui/icons/Close';
 import CssConstants from '../../constants/CssConstants';
-import ParticlesBackground from '../ParticlesBackground';
+import ParticlesBackground from '../../particles/ParticlesBackground';
 
 const GridContainer = styled.div<{numColumns: number}>`
     display: grid;

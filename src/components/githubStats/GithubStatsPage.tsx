@@ -2,7 +2,7 @@ import { Grow, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/c
 import React from 'react';
 import CssConstants from '../../constants/CssConstants';
 import { ReactSVG } from 'react-svg'
-import ParticlesBackground from '../ParticlesBackground';
+import ParticlesBackground from '../../particles/ParticlesBackground';
 
 const useStyles = makeStyles((theme: Theme) => ({
     gridContainerColumns: {

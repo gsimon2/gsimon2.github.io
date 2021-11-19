@@ -5,6 +5,7 @@ import ProjectTagsDisplay from './ProjectTagsDisplay';
 import ProjectModal from './ProjectModal';
 import CssConstants from '../../constants/CssConstants';
 import { ThemeTypes } from '../../constants/Constants';
+import LazyLoadCardMedia from './LazyLoadCardMedia';
 
 const useStyles = makeStyles((theme: Theme) => ({
     media: {
@@ -39,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }));
 
 const ProjectCard: React.FC<IProject> = (props) => {
-    const {name, img, description, year, tags} = props;
+    const {name, img, lowResImg, description, year, tags} = props;
     const [displayModal, setDisplayModal] = useState(false);
     const theme = useTheme<Theme>();
     const classes = useStyles(theme);
@@ -49,9 +50,10 @@ const ProjectCard: React.FC<IProject> = (props) => {
             <Grow in={true}>
                 <div className={classes.wrapper}>
                     <Card variant="outlined" onClick={() => setDisplayModal(true)} className={classes.card}>
-                        {img && <CardMedia 
+                        {img && <LazyLoadCardMedia 
                             className={classes.media}
-                            image={img}
+                            fullResImage={img}
+                            lowResImage={lowResImg}
                             title={name}
                         />}
                         <CardContent>

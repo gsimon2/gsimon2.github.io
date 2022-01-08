@@ -10,7 +10,7 @@ const ParticlesBackground: React.FC = ({children}) => {
 
     return (
         <>
-            {isEnabled && <Particles id="tsparticles" options={particleOptions} />}
+            {isEnabled && <Particles id="tsparticles" options={particleOptions} loaded={async () => console.log("Particles loaded")} />}
             <PageWrapper>
                 {children}
             </PageWrapper>

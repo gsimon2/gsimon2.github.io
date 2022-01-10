@@ -6,6 +6,8 @@ import Particles from "react-tsparticles";
 import { particleOptions } from './particlesOptions';
 import { makeStyles } from '@material-ui/core';
 
+let rendered = false;
+
 const useStyles = makeStyles(() => ({
     particles: {
         transition: 'opacity 4s'
@@ -22,12 +24,13 @@ const useStyles = makeStyles(() => ({
 const ParticlesBackground: React.FC = ({children}) => {
     const isEnabled = useSelector((state: RootState) => state.userPreferences.liveBackground);
     const classes = useStyles();
-    const [displayStateClass, setDisplayStateClass] = useState(classes.hidden);
+    const [displayStateClass, setDisplayStateClass] = useState(rendered ? classes.shown : classes.hidden);
 
     useEffect(() => {
-        setTimeout(() => {
+        !rendered && setTimeout(() => {
             setDisplayStateClass(classes.shown);
-        }, 1500);
+            rendered = true;
+        }, 1000);
     }, [classes.shown]);
 
     return (

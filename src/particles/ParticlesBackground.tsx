@@ -18,8 +18,7 @@ const useStyles = makeStyles(() => ({
     shown: {
         opacity: 1
     }
-}))
-
+}));
 
 const ParticlesBackground: React.FC = ({children}) => {
     const isEnabled = useSelector((state: RootState) => state.userPreferences.liveBackground);

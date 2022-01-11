@@ -1,10 +1,11 @@
-import { Card, CardContent, CardMedia, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Card, CardContent, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
 import ProjectModal from './ProjectModal';
 import CssConstants from '../../constants/CssConstants';
 import { ThemeTypes } from '../../constants/Constants';
+import CardMediaWithPlaceHolder from './CardMediaWithPlaceHolder';
 
 const useStyles = makeStyles((theme: Theme) => ({
     media: {
@@ -49,7 +50,7 @@ const ProjectCard: React.FC<IProject> = (props) => {
             <Grow in={true}>
                 <div className={classes.wrapper}>
                     <Card variant="outlined" onClick={() => setDisplayModal(true)} className={classes.card}>
-                        {img && <CardMedia 
+                        {img && <CardMediaWithPlaceHolder 
                             className={classes.media}
                             image={img}
                             title={name}

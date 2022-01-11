@@ -153,7 +153,6 @@ export const projects: IProject[] = [
     {
         name: 'Custom Fitbit Watchface',
         img: "https://github.com/gsimon2/fitbit-watchface/blob/main/demo.gif?raw=true",
-        lowResImg: "https://github.com/gsimon2/playlist-drag-and-drop/blob/main/demo-low-res.gif",
         description: "A fun custom Fitbit watch face I designed for my fiancé while we were dating. It has a simple watch face with a background image of our dog, Loki. If you click the sides of the screen in a pre-defined sequence, then a custom message would appear on the screen.",
         year: '2018',
         tags: [{

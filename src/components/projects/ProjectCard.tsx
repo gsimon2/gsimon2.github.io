@@ -1,4 +1,4 @@
-import { Card, CardContent, CardMedia, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Card, CardContent, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
 import React, { useState } from 'react';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   }));
 
 const ProjectCard: React.FC<IProject> = (props) => {
-    const {name, img, lowResImg, description, year, tags} = props;
+    const {name, img, description, year, tags} = props;
     const [displayModal, setDisplayModal] = useState(false);
     const theme = useTheme<Theme>();
     const classes = useStyles(theme);
@@ -53,7 +53,6 @@ const ProjectCard: React.FC<IProject> = (props) => {
                         {img && <LazyLoadCardMedia 
                             className={classes.media}
                             fullResImage={img}
-                            lowResImage={lowResImg}
                             title={name}
                         />}
                         <CardContent>

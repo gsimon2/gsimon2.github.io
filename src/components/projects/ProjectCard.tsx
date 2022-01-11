@@ -5,7 +5,7 @@ import ProjectTagsDisplay from './ProjectTagsDisplay';
 import ProjectModal from './ProjectModal';
 import CssConstants from '../../constants/CssConstants';
 import { ThemeTypes } from '../../constants/Constants';
-import LazyLoadCardMedia from './LazyLoadCardMedia';
+import CardMediaWithPlaceHolder from './CardMediaWithPlaceHolder';
 
 const useStyles = makeStyles((theme: Theme) => ({
     media: {
@@ -50,9 +50,9 @@ const ProjectCard: React.FC<IProject> = (props) => {
             <Grow in={true}>
                 <div className={classes.wrapper}>
                     <Card variant="outlined" onClick={() => setDisplayModal(true)} className={classes.card}>
-                        {img && <LazyLoadCardMedia 
+                        {img && <CardMediaWithPlaceHolder 
                             className={classes.media}
-                            fullResImage={img}
+                            image={img}
                             title={name}
                         />}
                         <CardContent>

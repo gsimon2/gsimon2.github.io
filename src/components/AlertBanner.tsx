@@ -1,5 +1,6 @@
-import { makeStyles, Theme, useTheme } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
+import { Theme, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { Alert } from '@mui/material';
 import React, { useState } from 'react';
 
 import CssConstants from '../constants/CssConstants';

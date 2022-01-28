@@ -1,4 +1,5 @@
-import { Grow, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/core';
+import { Grow, Theme, useMediaQuery, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import CssConstants from '../../constants/CssConstants';
 import { ReactSVG } from 'react-svg'
@@ -43,10 +44,14 @@ const GithubStatsPage: React.FC = () => {
         <ParticlesBackground>
             <div className={isMobileView ? classes.gridContainerRows : classes.gridContainerColumns}>
                 <Grow in={true} style={{overflow: 'hidden', width: '100%', display: 'flex', justifyContent: 'center'}}>
+                    <div>
                     <ReactSVG src="https://raw.githubusercontent.com/gsimon2/github-stats/master/generated/overview.svg" className={classes.card} />
+                    </div>
                 </Grow>
                 <Grow in={true} style={{overflow: 'hidden', width: '100%', display: 'flex', justifyContent: 'center'}}>
+                    <div>
                     <ReactSVG src="https://raw.githubusercontent.com/gsimon2/github-stats/master/generated/languages.svg" className={classes.card} />
+                    </div>
                 </Grow>
             </div>
             <div>

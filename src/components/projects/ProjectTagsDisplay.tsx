@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { ProjectTags } from "../../constants/Constants";
-import CasinoIcon from '@material-ui/icons/Casino';
+import CasinoIcon from '@mui/icons-material/Casino';
 import { IProjectTag } from '../../models/projectModel';
 import TagDisplay from './TagDisplay';
-import SchoolIcon from '@material-ui/icons/School';
-import DescriptionIcon from '@material-ui/icons/Description';
-import CodeIcon from '@material-ui/icons/Code';
+import SchoolIcon from '@mui/icons-material/School';
+import DescriptionIcon from '@mui/icons-material/Description';
+import CodeIcon from '@mui/icons-material/Code';
 
 const TypeTagsWrapperCompact = styled.div`
     display: flex;

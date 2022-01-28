@@ -1,4 +1,5 @@
-import { Grow, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/core';
+import { Grow, Theme, useMediaQuery, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React from 'react';
 import profileImag from '../assets/glen-mt.jpg';
 import CssConstants from '../constants/CssConstants';
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     glass: {
         padding: '1rem',
         borderRadius: '0.75rem',
-        backgroundColor: theme.palette.type === ThemeTypes.dark ? 'rgba(0, 0, 15, .35)' : 'rgba(220, 240, 255, 0.65)',
+        backgroundColor: theme.palette.mode === ThemeTypes.dark ? 'rgba(0, 0, 15, .35)' : 'rgba(220, 240, 255, 0.65)',
         backdropFilter: 'blur(5px)'
     }
 }));

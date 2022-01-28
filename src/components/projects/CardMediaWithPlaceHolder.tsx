@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { makeStyles, CardMedia, CardMediaProps } from '@material-ui/core';
+import { CardMedia, CardMediaProps } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import {getRandomIntFromRange} from '../../util/RandomNumber';
 
 const useStyles = (hueStart: number, hueEnd: number, animationDelay: number) => makeStyles(() => ({

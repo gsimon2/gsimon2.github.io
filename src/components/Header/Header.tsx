@@ -1,12 +1,13 @@
-import { BottomNavigation, BottomNavigationAction, makeStyles, Theme, useMediaQuery, useTheme } from '@material-ui/core';
+import { BottomNavigation, BottomNavigationAction, Theme, useMediaQuery, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import * as React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Routes, ThemeTypes } from '../../constants/Constants';
-import { Description, Home, Collections } from '@material-ui/icons';
+import { Description, Home, Collections } from '@mui/icons-material';
 import CssConstants from '../../constants/CssConstants';
 import SettingsMenu from './SettingsMenu';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import MobileNavMenu from './MobileNavMenu';
 import {ReactComponent as HeaderLogoLight} from '../../assets/header-logo-light.svg';
 import {ReactComponent as HeaderLogoDark} from '../../assets/header-logo-dark.svg';
@@ -15,13 +16,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     header: {
         display: 'flex',
         height: CssConstants.headerHeight,
-        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
+        backgroundColor: theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
         position: 'sticky',
         top: 0,
         zIndex: theme.zIndex.appBar
     },
     bottomNav: {
-        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground
+        backgroundColor: theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground
     },
     headerBorder: {
         minHeight: CssConstants.headerBorderWidth,
@@ -70,7 +71,7 @@ const Header: React.FC = () => {
         </BottomNavigation>
     );
 
-    const HeaderLogo = theme.palette.type === ThemeTypes.dark ? <HeaderLogoDark className={classes.logo} /> : <HeaderLogoLight className={classes.logo} />;
+    const HeaderLogo = theme.palette.mode === ThemeTypes.dark ? <HeaderLogoDark className={classes.logo} /> : <HeaderLogoLight className={classes.logo} />;
 
     return (
         <>

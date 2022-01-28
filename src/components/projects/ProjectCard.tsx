@@ -1,4 +1,5 @@
-import { Card, CardContent, Grow, makeStyles, Theme, useTheme } from '@material-ui/core';
+import { Card, CardContent, Grow, Theme, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
 import { IProject } from '../../models/projectModel';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     card: {
         padding: '1px',
-        backgroundColor: theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
+        backgroundColor: theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground,
         borderColor: CssConstants.themes.shared.accentColor,
         boxShadow: theme.shadows[2]
     },

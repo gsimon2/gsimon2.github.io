@@ -4,7 +4,7 @@ import { RootState } from '../redux/store';
 import { useSelector } from 'react-redux';
 import Particles from "react-tsparticles";
 import { particleOptions } from './particlesOptions';
-import { makeStyles } from '@material-ui/core';
+import makeStyles from '@mui/styles/makeStyles';
 
 let rendered = false;
 

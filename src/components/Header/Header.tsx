@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     bottomNav: {
         backgroundColor: theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground
     },
+    NavAction: {
+        width: '6.5rem'
+    },
     headerBorder: {
         minHeight: CssConstants.headerBorderWidth,
         backgroundColor: CssConstants.themes.shared.accentColor,
@@ -64,10 +67,10 @@ const Header: React.FC = () => {
 
     const NavElement = (
         <BottomNavigation value={selectedTab} showLabels className={classes.bottomNav} >
-            <BottomNavigationAction component={Link} label="Home" value={Routes.home} icon={<Home />} to={Routes.home} />
-            <BottomNavigationAction component={Link} label="Github Stats" value={Routes.githubStats} icon={<GitHubIcon />} to={Routes.githubStats} />
-            <BottomNavigationAction component={Link} label="Projects" value={Routes.projects} icon={<Collections />} to={Routes.projects} />
-            <BottomNavigationAction component={Link} label="Resume" value={Routes.resume} icon={<Description />} to={Routes.resume} />
+            <BottomNavigationAction component={Link} label="Home" value={Routes.home} icon={<Home />} to={Routes.home} className={classes.NavAction} />
+            <BottomNavigationAction component={Link} label="Github Stats" value={Routes.githubStats} icon={<GitHubIcon />} to={Routes.githubStats} className={classes.NavAction} />
+            <BottomNavigationAction component={Link} label="Projects" value={Routes.projects} icon={<Collections />} to={Routes.projects} className={classes.NavAction} />
+            <BottomNavigationAction component={Link} label="Resume" value={Routes.resume} icon={<Description />} to={Routes.resume} className={classes.NavAction} />
         </BottomNavigation>
     );
 

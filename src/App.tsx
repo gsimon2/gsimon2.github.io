@@ -2,7 +2,7 @@ import { HashRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import AppContentRouter from './components/AppContentRouter';
-import { createTheme, ThemeProvider, Theme, StyledEngineProvider, adaptV4Theme } from '@mui/material';
+import { createTheme, ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
 import React from 'react';
 import CssConstants from './constants/CssConstants';
 import { RootState } from './redux/store';
@@ -40,11 +40,15 @@ function App() {
 
   const theme = React.useMemo(
     () =>
-      createTheme(adaptV4Theme({
+      createTheme({
         palette: {
-          mode: themeType === ThemeTypes.dark ? 'dark' : 'light'
+          mode: themeType === ThemeTypes.dark ? 'dark' : 'light',
+          primary: {
+            main: CssConstants.themes.shared.accentColor,
+            dark: CssConstants.themes.shared.accentColor
+          }
         }
-      })),
+      }),
     [themeType],
   );
   

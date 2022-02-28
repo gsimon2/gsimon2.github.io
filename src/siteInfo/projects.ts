@@ -81,7 +81,8 @@ export const projects: IProject[] = [
     },
     {
         name: 'Hide Player UI',
-        description: "A module for FoundryVtt that the GM can enable to hide all joining player's control UI. The intended use for this is when the player screen is being used for displaying the maps during in-person gaming.",
+        img: "https://github.com/gsimon2/hide-player-ui/blob/main/demo.gif?raw=true",
+        description: "A module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
         year: '2021',
         tags: [{
             type: ProjectTags.github,

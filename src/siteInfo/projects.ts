@@ -4,6 +4,22 @@ import personalWebsiteImg from '../assets/personal-website-development.png';
 
 export const projects: IProject[] = [
     {
+        name: 'Twitch Stream Watcher Script',
+        img: "https://raw.githubusercontent.com/gsimon2/twitchStreamWatcher/main/demo.png",
+        description: 'A script to spin up a puppeteer controlled browser instance to watch a twitch stream and collect viewing points via being a passive watcher and by claiming bonuses as they appear.',
+        year: '2022',
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/twitchStreamWatcher"
+        },{
+            type: ProjectTags.code
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/twitchStreamWatcher?style=plastic)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/twitchStreamWatcher?color=orange&label=Last%20Updated&style=plastic)'
+        ]
+    },
+    {
         name: 'Personal Website',
         img: personalWebsiteImg,
         description: `I created this website to supplement my resume, encourage further learning when it comes to designing front-end projects, and act as a reference guide for ideas / practices that I have picked up over my years of working in React. I boot-strapped it using 'Create React App' with the typescript template. For routing, I pulled in the 'React Router Dom' hash router. I Explored and leveraged 'Material UI' as a component library, supplemented with 'Styled Components'. Application state is tracked via 'React Redux'. For hosting, I used 'Github Pages' and took advantage of 'Github Actions' to automate the build and deploy process. Lastly, I bought a personal domain so I could share it at a nice URL.

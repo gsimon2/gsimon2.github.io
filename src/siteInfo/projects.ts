@@ -18,7 +18,8 @@ export const projects: IProject[] = [
             type: ProjectTags.code
         }],
         shields: [
-            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/gsimon2.github.io?style=plastic)'
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/gsimon2.github.io?style=plastic)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/gsimon2.github.io?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -37,7 +38,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/dramatic-rolls?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/dramatic-rolls/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/dramatic-rolls/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/dramatic-rolls?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -56,7 +58,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/playlist-drag-and-drop?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/playlist-drag-and-drop/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/playlist-drag-and-drop/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/playlist-drag-and-drop?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -75,7 +78,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/pf2e-inspire-courage?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/pf2e-inspire-courage/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/pf2e-inspire-courage/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/pf2e-inspire-courage?color=orange&label=Last%20Updated&style=plastic)'
 
         ]
     },
@@ -95,7 +99,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/hide-player-ui?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/hide-player-ui/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/hide-player-ui/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/hide-player-ui?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -114,7 +119,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/close-player-art?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/close-player-art/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/close-player-art/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/close-player-art?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {

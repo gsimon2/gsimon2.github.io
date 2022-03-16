@@ -86,7 +86,7 @@ export const projects: IProject[] = [
     {
         name: 'Hide Player UI',
         img: "https://github.com/gsimon2/hide-player-ui/blob/main/demo.gif?raw=true",
-        description: "A module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
+        description: "A simple module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
         year: '2021',
         tags: [{
             type: ProjectTags.github,

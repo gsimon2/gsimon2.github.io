@@ -1,11 +1,21 @@
-import { AppBar, Toolbar, useMediaQuery, InputBase, makeStyles, Theme, useTheme, fade, IconButton } from '@material-ui/core';
+import {
+    AppBar,
+    Toolbar,
+    useMediaQuery,
+    InputBase,
+    Theme,
+    useTheme,
+    alpha,
+    IconButton,
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ProjectCard from './ProjectCard';
 import {projects} from '../../siteInfo/projects';
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from '@mui/icons-material/Search';
 import { IProject } from '../../models/projectModel';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import CssConstants from '../../constants/CssConstants';
 import ParticlesBackground from '../../particles/ParticlesBackground';
 
@@ -27,9 +37,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     search: {
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: fade(theme.palette.common.white, 0.15),
+        backgroundColor: alpha(theme.palette.common.white, 0.15),
         '&:hover': {
-            backgroundColor: fade(theme.palette.common.white, 0.25),
+            backgroundColor: alpha(theme.palette.common.white, 0.25),
         },
         marginLeft: 0,
         width: '100%',
@@ -54,7 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
       inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        paddingLeft: `calc(1em + ${theme.spacing(4)})`,
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
@@ -103,34 +113,38 @@ const ProjectsPage: React.FC = () => {
 
     const projectsToDisplay = projects.filter(filterFunc).map((p, index) => <ProjectCard {...p} key={`card${index}`}/>);
 
-    return (
-        <>
-            <AppBar position="sticky" className={classes.appBar} >
-                <Toolbar variant="dense" className={classes.toolbar}>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase placeholder="search..." 
-                                   autoComplete="on"
-                                   value={filterText}
-                                   onChange={e => setFilterText(e.target.value)}
-                                   classes={{root: classes.inputRoot, input: classes.inputInput}}
-                                   endAdornment={!!filterText.length ?
-                                        <IconButton color="secondary" onClick={() => setFilterText('')} title="clear" id="clear-filter-text-button" className={classes.clearButton}>
-                                            <CloseIcon />
-                                        </IconButton>:
-                                        null} />
+    return <>
+        <AppBar position="sticky" className={classes.appBar} >
+            <Toolbar variant="dense" className={classes.toolbar}>
+                <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                        <SearchIcon />
                     </div>
-                </Toolbar>
-            </AppBar>
-            <ParticlesBackground>
-                <GridContainer numColumns={getNumberOfColumns()}>
-                    {projectsToDisplay}
-                </GridContainer>
-            </ParticlesBackground>
-        </>
-    );
+                    <InputBase placeholder="search..." 
+                               autoComplete="on"
+                               value={filterText}
+                               onChange={e => setFilterText(e.target.value)}
+                               classes={{root: classes.inputRoot, input: classes.inputInput}}
+                               endAdornment={!!filterText.length ?
+                                    <IconButton
+                                        color="secondary"
+                                        onClick={() => setFilterText('')}
+                                        title="clear"
+                                        id="clear-filter-text-button"
+                                        className={classes.clearButton}
+                                        size="large">
+                                        <CloseIcon />
+                                    </IconButton>:
+                                    null} />
+                </div>
+            </Toolbar>
+        </AppBar>
+        <ParticlesBackground>
+            <GridContainer numColumns={getNumberOfColumns()}>
+                {projectsToDisplay}
+            </GridContainer>
+        </ParticlesBackground>
+    </>;
 };
 
 export default ProjectsPage;

@@ -4,6 +4,22 @@ import personalWebsiteImg from '../assets/personal-website-development.png';
 
 export const projects: IProject[] = [
     {
+        name: 'Twitch Stream Watcher Script',
+        img: "https://raw.githubusercontent.com/gsimon2/twitchStreamWatcher/main/demo.png",
+        description: 'A script to spin up a puppeteer controlled browser instance to watch a twitch stream and collect viewing points via being a passive watcher and by claiming bonuses as they appear.',
+        year: '2022',
+        tags: [{
+            type: ProjectTags.github,
+            link: "https://github.com/gsimon2/twitchStreamWatcher"
+        },{
+            type: ProjectTags.code
+        }],
+        shields: [
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/twitchStreamWatcher?style=plastic)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/twitchStreamWatcher?color=orange&label=Last%20Updated&style=plastic)'
+        ]
+    },
+    {
         name: 'Personal Website',
         img: personalWebsiteImg,
         description: `I created this website to supplement my resume, encourage further learning when it comes to designing front-end projects, and act as a reference guide for ideas / practices that I have picked up over my years of working in React. I boot-strapped it using 'Create React App' with the typescript template. For routing, I pulled in the 'React Router Dom' hash router. I Explored and leveraged 'Material UI' as a component library, supplemented with 'Styled Components'. Application state is tracked via 'React Redux'. For hosting, I used 'Github Pages' and took advantage of 'Github Actions' to automate the build and deploy process. Lastly, I bought a personal domain so I could share it at a nice URL.
@@ -18,7 +34,8 @@ export const projects: IProject[] = [
             type: ProjectTags.code
         }],
         shields: [
-            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/gsimon2.github.io?style=plastic)'
+            '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/gsimon2.github.io?style=plastic)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/gsimon2.github.io?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -37,7 +54,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/dramatic-rolls?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/dramatic-rolls/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/dramatic-rolls/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/dramatic-rolls?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -56,7 +74,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/playlist-drag-and-drop?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/playlist-drag-and-drop/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/playlist-drag-and-drop/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/playlist-drag-and-drop?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -75,14 +94,15 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/pf2e-inspire-courage?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/pf2e-inspire-courage/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/pf2e-inspire-courage/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/pf2e-inspire-courage?color=orange&label=Last%20Updated&style=plastic)'
 
         ]
     },
     {
         name: 'Hide Player UI',
         img: "https://github.com/gsimon2/hide-player-ui/blob/main/demo.gif?raw=true",
-        description: "A module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
+        description: "A simple module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
         year: '2021',
         tags: [{
             type: ProjectTags.github,
@@ -95,7 +115,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/hide-player-ui?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/hide-player-ui/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/hide-player-ui/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/hide-player-ui?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {
@@ -114,7 +135,8 @@ export const projects: IProject[] = [
         }],
         shields: [
             '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/close-player-art?style=plastic)',
-            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/close-player-art/latest/module.zip)'
+            '![GitHub release (latest by SemVer and asset including pre-releases)](https://img.shields.io/github/downloads-pre/gsimon2/close-player-art/latest/module.zip)',
+            '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/close-player-art?color=orange&label=Last%20Updated&style=plastic)'
         ]
     },
     {

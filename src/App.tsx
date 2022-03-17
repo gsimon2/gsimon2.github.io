@@ -2,12 +2,19 @@ import { HashRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import Header from './components/Header/Header';
 import AppContentRouter from './components/AppContentRouter';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createTheme, ThemeProvider, Theme, StyledEngineProvider } from '@mui/material';
 import React from 'react';
 import CssConstants from './constants/CssConstants';
 import { RootState } from './redux/store';
 import { useSelector } from 'react-redux';
 import { ThemeTypes } from './constants/Constants';
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
+  interface DefaultTheme extends Theme {}
+}
+
 
 const PageWrapper = styled.div<{themeType: ThemeTypes}>`
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -33,15 +40,20 @@ function App() {
 
   const theme = React.useMemo(
     () =>
-      createMuiTheme({
+      createTheme({
         palette: {
-          type: themeType === ThemeTypes.dark ? 'dark' : 'light'
+          mode: themeType === ThemeTypes.dark ? 'dark' : 'light',
+          primary: {
+            main: CssConstants.themes.shared.accentColor,
+            dark: CssConstants.themes.shared.accentColor
+          }
         }
       }),
     [themeType],
   );
   
   return (
+    <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <HashRouter>
           <PageWrapper themeType={themeType}>
@@ -53,6 +65,7 @@ function App() {
           </PageWrapper>
         </HashRouter>
       </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

@@ -1,19 +1,20 @@
-import { IconButton, makeStyles, Modal, Theme, useMediaQuery, useTheme } from '@material-ui/core';
+import { IconButton, Modal, Theme, useMediaQuery, useTheme } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { ThemeTypes } from '../../constants/Constants';
 import { IProject } from '../../models/projectModel';
 import CssConstants from '../../constants/CssConstants';
 import ProjectTagsDisplay from './ProjectTagsDisplay';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import ReactMarkdown from 'react-markdown';
 
 const ModalWrapper = styled.div<{theme: Theme}>`
     margin: auto;
     min-width: 0;
     width: 70vw;
-    background-color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
-    color: ${props => props.theme.palette.type === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
+    background-color: ${props => props.theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.secondaryBackground : CssConstants.themes.light.secondaryBackground};
+    color: ${props => props.theme.palette.mode === ThemeTypes.dark ? CssConstants.themes.dark.textColor : CssConstants.themes.light.textColor};
     border: 2px solid;
     border-color: ${CssConstants.themes.shared.accentColor};
     box-shadow: ${props => props.theme.shadows[5]};
@@ -96,39 +97,38 @@ const ProjectModal: React.FC<IProjectModalProps> = ({project, isOpen, onClose}) 
     const classes = useStyles();
     const isMobileView = useMediaQuery(`(max-width:${CssConstants.mobileBreakPoint})`);
     const [showFullScreenImg, setShowFullScreenImg] = useState(false);
-
-    const onModalRender = () => {
-        document.getElementById('close-modal-button')?.focus();
-    };
   
-    return (
-        <>
-            <Modal open={isOpen} onClose={onClose} className={classes.modal} onRendered={onModalRender}>
-                <ModalWrapper theme={theme}>
-                    <div className={classes.closeButtonWrapper}>
-                        <IconButton color="primary" onClick={onClose} title="close" id="close-modal-button">
-                            <CloseIcon />
-                        </IconButton>
-                    </div>
-                    <Header id="project-details-modal-title">{project.name}</Header>
-                    {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
-                    <div className={`${classes.metaDataWrapper} ${isMobileView ? classes.flexDirectionColumn : classes.flexDirectionRow}`}>
-                        <span>{project.year}</span>
-                        {project.shields?.map((s, index) => <ReactMarkdown children={s} key={`shield-io-${index}`} />)}
-                    </div>
-                    <P id="project-details-modal-description">
-                        {project.description}
-                    </P>
-                    {project.tags && <ProjectTagsDisplay tags={project.tags} />}
-                </ModalWrapper>
-            </Modal>
-            <Modal open={showFullScreenImg} onClose={() => setShowFullScreenImg(false)}>
-                <FullScreenImgWrapper onClick={() => setShowFullScreenImg(false) }>
-                    <FullScreenImg src={project.img} alt={`${project.name}-fullscreen`}  />
-                </FullScreenImgWrapper>
-            </Modal>
-        </>
-    );
+    return <>
+        <Modal open={isOpen} onClose={onClose} className={classes.modal}>
+            <ModalWrapper theme={theme}>
+                <div className={classes.closeButtonWrapper}>
+                    <IconButton
+                        color="primary"
+                        onClick={onClose}
+                        title="close"
+                        id="close-modal-button"
+                        size="large">
+                        <CloseIcon />
+                    </IconButton>
+                </div>
+                <Header id="project-details-modal-title">{project.name}</Header>
+                {project.img && <ImgWrapper onClick={() => setShowFullScreenImg(true)}><Img src={project.img} alt={`${project.name}`} /></ImgWrapper>}
+                <div className={`${classes.metaDataWrapper} ${isMobileView ? classes.flexDirectionColumn : classes.flexDirectionRow}`}>
+                    <span>{project.year}</span>
+                    {project.shields?.map((s, index) => <ReactMarkdown children={s} key={`shield-io-${index}`} />)}
+                </div>
+                <P id="project-details-modal-description">
+                    {project.description}
+                </P>
+                {project.tags && <ProjectTagsDisplay tags={project.tags} />}
+            </ModalWrapper>
+        </Modal>
+        <Modal open={showFullScreenImg} onClose={() => setShowFullScreenImg(false)}>
+            <FullScreenImgWrapper onClick={() => setShowFullScreenImg(false) }>
+                <FullScreenImg src={project.img} alt={`${project.name}-fullscreen`}  />
+            </FullScreenImgWrapper>
+        </Modal>
+    </>;
 };
 
 export interface IProjectModalProps {

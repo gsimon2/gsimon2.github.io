@@ -1,11 +1,11 @@
-import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThemeTypes } from '../../constants/Constants';
 import { RootState } from '../../redux/store';
 import { updateTheme } from '../../redux/userPreferencesSlice';
-import NightsStayIcon from '@material-ui/icons/NightsStay';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
+import NightsStayIcon from '@mui/icons-material/NightsStay';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`

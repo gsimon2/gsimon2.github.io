@@ -1,8 +1,17 @@
-import { IconButton, ListItemIcon, SwipeableDrawer, ListItem, ListItemText, useTheme, Theme, makeStyles } from '@material-ui/core';
+import {
+    IconButton,
+    ListItemIcon,
+    SwipeableDrawer,
+    ListItem,
+    ListItemText,
+    useTheme,
+    Theme,
+} from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
 import React, { useState } from 'react';
-import MenuIcon from '@material-ui/icons/Menu';
-import { Description, Home, Collections } from '@material-ui/icons';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Description, Home, Collections } from '@mui/icons-material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { Link, useLocation } from 'react-router-dom';
 import { Routes, ThemeTypes } from '../../constants/Constants';
 import CssConstants from '../../constants/CssConstants';
@@ -12,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) => ({
         boxShadow: `inset 3px 0px 5px 0px ${ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor}`
     },
     listItem: {
-        color: theme.palette.type === ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor
+        color: theme.palette.mode === ThemeTypes.dark ? CssConstants.linkColorSecondary : CssConstants.linkColor
     }
 }));
 
@@ -44,7 +53,7 @@ const MobileNavMenu: React.FC = () => {
 
     return (
         <div>
-            <IconButton onClick={toggleDrawer(true)} title="Navigation Menu">
+            <IconButton onClick={toggleDrawer(true)} title="Navigation Menu" size="large">
                 <MenuIcon />
             </IconButton>
             <SwipeableDrawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)} onOpen={toggleDrawer(true)} color="primary">
@@ -66,7 +75,6 @@ const MobileNavMenu: React.FC = () => {
                 </ListItem>
             </SwipeableDrawer>
         </div>
-        
     );
 };
 

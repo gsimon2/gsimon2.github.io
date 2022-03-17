@@ -1,10 +1,10 @@
 import React from 'react';
-import Popover from '@material-ui/core/Popover';
-import Button from '@material-ui/core/Button';
+import Popover from '@mui/material/Popover';
+import Button from '@mui/material/Button';
 import styled from 'styled-components';
-import SettingsIcon from '@material-ui/icons/Settings';
+import SettingsIcon from '@mui/icons-material/Settings';
 import ThemeSelector from './ThemeSelector';
-import { IconButton, useMediaQuery } from '@material-ui/core';
+import { IconButton, useMediaQuery } from '@mui/material';
 import CssConstants from '../../constants/CssConstants';
 import LiveBackgroundSelector from './LiveBackgroundSelector';
 
@@ -37,7 +37,7 @@ const SettingsMenu: React.FC = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'settings-popover' : undefined;
   const settingsButton = (isMobileView ?
-    <IconButton onClick={handleClick} title="Settings">
+    <IconButton onClick={handleClick} title="Settings" size="large">
       <SettingsIcon />
     </IconButton> :
     <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick} startIcon={<SettingsIcon />} title="Settings">

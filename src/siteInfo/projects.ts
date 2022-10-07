@@ -1,8 +1,28 @@
 import { ProjectTags } from "../constants/Constants";
 import { IProject } from "../models/projectModel";
 import personalWebsiteImg from '../assets/personal-website-development.png';
+import parallaxScrollingWebsiteDemo from '../assets/parallax-scrolling-website-demo.gif';
 
 export const projects: IProject[] = [
+   {
+      name: 'Parallax Scrolling Website ',
+      img: parallaxScrollingWebsiteDemo,
+      description: 'I made a simple website to promote a friend\'s novel. I wanted to explore the parallax scrolling and implemented it on the desktop version of the site. A mobile friendly version of the site is loaded for small screens that does not apply this scrolling effect to reduce processing constraints. The site can be seen by clicked on the website tag',
+      year: '2022',
+      tags: [{
+         type: ProjectTags.website,
+         link: "https://glenasimon.com/winds-of-shadow/"
+     },{
+          type: ProjectTags.github,
+          link: "https://github.com/gsimon2/winds-of-shadow"
+      },{
+          type: ProjectTags.code
+      }],
+      shields: [
+          '![GitHub top language](https://img.shields.io/github/languages/top/gsimon2/winds-of-shadow?style=plastic)',
+          '![Last Updated](https://img.shields.io/github/last-commit/gsimon2/winds-of-shadow?color=orange&label=Last%20Updated&style=plastic)'
+      ]
+  },
     {
         name: 'Twitch Stream Watcher Script',
         img: "https://raw.githubusercontent.com/gsimon2/twitchStreamWatcher/main/demo.png",
@@ -27,7 +47,11 @@ export const projects: IProject[] = [
         Overall, it is grossly over-engineered for what its purpose is, but I had a blast making it.
         `,
         year: '2021',
-        tags: [{
+        tags: [
+         {
+            type: ProjectTags.website,
+            link: "https://glenasimon.com/#/"
+        },{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/gsimon2.github.io"
         },{
@@ -42,7 +66,7 @@ export const projects: IProject[] = [
         name: 'Dramatic Rolls',
         img: "https://github.com/gsimon2/dramatic-rolls/blob/main/natty20.gif?raw=true",
         description: "A module for FoundryVtt that adds a little excitement to natural 20s and natural 1s.",
-        year: '2021',
+        year: '2021-2022',
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/dramatic-rolls"
@@ -62,7 +86,7 @@ export const projects: IProject[] = [
         name: 'Playlist Drag and Drop',
         img: "https://github.com/gsimon2/playlist-drag-and-drop/blob/main/playlist-drag-and-drop-demo.gif?raw=true",
         description: "A module for FoundryVtt that allows dragging playlist soundtracks from the sidebar and dropping them onto the map as ambient sounds. Default sound volume, radius, easing, and repeat settings can be configured via the configure settings menu.",
-        year: '2021',
+        year: '2021-2022',
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/playlist-drag-and-drop"
@@ -82,7 +106,7 @@ export const projects: IProject[] = [
         name: 'Pf2e Inspire Courage',
         img: "https://github.com/gsimon2/pf2e-inspire-courage/blob/main/demo.gif?raw=true",
         description: "A module for FoundryVtt that adds a button to character token HUDs that allows for the toggling of Inspire Courage. This utilizes the PF2e \"Inspire Courage\" spell effect. Only applies to to actual character actors, not NPCs due to how spell effect interact with their sheet. When inspire courage is active, the inspire courage effect icon will appear on the token and the spell effect will be added to the actor's sheet. The bonus to attack and damage rolls will automatically apply.",
-        year: '2021',
+        year: '2021-2022',
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/pf2e-inspire-courage"
@@ -103,7 +127,7 @@ export const projects: IProject[] = [
         name: 'Hide Player UI',
         img: "https://github.com/gsimon2/hide-player-ui/blob/main/demo.gif?raw=true",
         description: "A simple module for FoundryVtt that enables users to configure what Foundry UI they would like to have shown on the screen. The GM can also override what UI connecting players are allowed to see. One common use case for this is when a screen is being used to just broadcast the map and much of the onscreen UI is not needed.",
-        year: '2021',
+        year: '2021-2022',
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/hide-player-ui"
@@ -123,7 +147,7 @@ export const projects: IProject[] = [
         name: 'Close Player Art',
         img: "https://github.com/gsimon2/close-player-art/blob/main/close-art.gif?raw=true",
         description: "A module for FoundryVtt that adds a configurable hot key (Default ` - backtick) for the GM to close open image popouts on player screens",
-        year: '2021',
+        year: '2021-2022',
         tags: [{
             type: ProjectTags.github,
             link: "https://github.com/gsimon2/close-player-art"

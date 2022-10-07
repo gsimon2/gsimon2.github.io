@@ -17,7 +17,8 @@ export enum ProjectTags {
     foundry = "foundry",
     academic = "academic",
     paper = "paper",
-    code = "code"
+    code = "code",
+    website = "website"
 }
 
 export default {

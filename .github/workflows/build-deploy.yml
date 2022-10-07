@@ -14,28 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    
-    - name: Install Node.js
-      uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: '16'
-    
-    - name: Install Packages
-      uses: actions/setup-node@v2
-      with:
-        cmd: npm install # will run `npm install` command
-
-    - name: Build
-      uses: actions/setup-node@v2
-      with:
-        cmd: npm run build # will run `npm run build` command
-
-    # - name: Run Tests
-    #   uses: actions/setup-node@v2
-    #   with:
-    #     cmd: npm run test # will run `npm run test` command
+        node-version: 16
+    - run: npm ci
+    - run: npm run build
+    # - run: npm run test   
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2

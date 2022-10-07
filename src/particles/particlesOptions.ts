@@ -1,7 +1,6 @@
-import { ISourceOptions } from "react-tsparticles";
 import CssConstants from "../constants/CssConstants";
 
-export const particleOptions: ISourceOptions = {
+export const particleOptions: any = {
     fpsLimit: 60,
     interactivity: {
       events: {

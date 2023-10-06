@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const ParticlesBackground: React.FC = ({children}) => {
+const ParticlesBackground: React.FC<IParticlesBackgroundProps> = ({children, disableAnimation = false}) => {
     const isEnabled = useSelector((state: RootState) => state.userPreferences.liveBackground);
     const classes = useStyles();
     const [displayStateClass, setDisplayStateClass] = useState(rendered ? classes.shown : classes.hidden);
@@ -34,12 +34,16 @@ const ParticlesBackground: React.FC = ({children}) => {
 
     return (
         <>
-            {isEnabled && <Particles id="tsparticles" className={`${classes.particles} ${displayStateClass}`} options={particleOptions} />}
+            {(isEnabled && !disableAnimation) && <Particles id="tsparticles" className={`${classes.particles} ${displayStateClass}`} options={particleOptions} />}
             <PageWrapper>
                 {children}
             </PageWrapper>
         </>
     );
 };
+
+export interface IParticlesBackgroundProps {
+   disableAnimation?: boolean
+}
 
 export default ParticlesBackground;

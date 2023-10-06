@@ -139,7 +139,7 @@ const ProjectsPage: React.FC = () => {
                 </div>
             </Toolbar>
         </AppBar>
-        <ParticlesBackground>
+        <ParticlesBackground disableAnimation={true}>
             <GridContainer numColumns={getNumberOfColumns()}>
                 {projectsToDisplay}
             </GridContainer>
